@@ -83,18 +83,6 @@ body {
 }
 .float-slow { animation: floatY 7s ease-in-out infinite; }
 
-@keyframes scrollUp {
-  from { transform: translateY(0); }
-  to { transform: translateY(-50%); }
-}
-@keyframes scrollDown {
-  from { transform: translateY(-50%); }
-  to { transform: translateY(0); }
-}
-.scroll-up { animation: scrollUp 28s linear infinite; }
-.scroll-down { animation: scrollDown 32s linear infinite; }
-.scroll-up-fast { animation: scrollUp 22s linear infinite; }
-
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }

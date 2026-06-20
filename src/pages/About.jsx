@@ -43,13 +43,15 @@ export default function About() {
                   aria-hidden
                   className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-blush/60 blur-3xl"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <img
-                    src="/dermanuecosmetics/assets/dermanue-logo.jpeg"
-                    alt="DERMANUE"
-                    className="w-2/3 max-w-xs float-slow"
-                  />
-                </div>
+                <img
+                  src="/dermanuecosmetics/assets/dermanue.jpeg"
+                  alt="DERMANUE brand story"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-t from-cocoa/45 via-transparent to-cream/10"
+                />
                 <div className="absolute bottom-6 left-6 right-6 glass-card rounded-2xl p-4">
                   <div className="text-[10px] tracking-luxe text-bronze">EST. CARE</div>
                   <div className="font-display text-espresso text-lg mt-1">

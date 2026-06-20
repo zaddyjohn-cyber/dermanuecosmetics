@@ -5,46 +5,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../components/Button.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
-import ProductCard from "../components/ProductCard.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
-
-function HeroCard({ src }) {
-  return (
-    <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_24px_40px_-20px_rgba(91,58,46,0.55)] ring-1 ring-softwhite/40">
-      <img
-        src={src}
-        alt="DERMANUE skincare"
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="lazy"
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-gradient-to-t from-cocoa/55 via-transparent to-transparent pointer-events-none"
-      />
-      <div className="absolute bottom-1.5 inset-x-1.5">
-        <div className="rounded-md bg-cocoa/75 backdrop-blur-sm py-1 text-center">
-          <div className="text-[8px] tracking-[0.36em] text-softwhite leading-none">
-            DERMANUE
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ScrollColumn({ images, direction = "up", className = "" }) {
-  const animClass = direction === "down" ? "scroll-down" : "scroll-up";
-  return (
-    <div className={`relative overflow-hidden ${className}`}>
-      <div className={`flex flex-col gap-3 ${animClass}`}>
-        {[...images, ...images].map((src, i) => (
-          <HeroCard key={`${src}-${i}`} src={src} />
-        ))}
-      </div>
-    </div>
-  );
-}
 
 const trustPoints = [
   { label: "Authentic Products", icon: "◇" },
@@ -99,32 +61,6 @@ const scienceCards = [
   },
 ];
 
-const featured = [
-  {
-    name: "Radiance Renewal Serum",
-    category: "SERUMS & TREATMENTS",
-    benefit: "Helps support a luminous, even-toned complexion with daily use.",
-    accent: "from-cream to-blush",
-    symbol: "✦",
-    image: "/dermanuecosmetics/assets/product-1.jpg",
-  },
-  {
-    name: "Hydra-Calm Moisturizer",
-    category: "MOISTURIZERS",
-    benefit: "A weightless cream that helps comfort and replenish soft skin.",
-    accent: "from-rose-beige to-cream-2",
-    symbol: "❋",
-    image: "/dermanuecosmetics/assets/product-2.jpg",
-  },
-  {
-    name: "Gentle Clarity Cleanser",
-    category: "CLEANSERS & TONERS",
-    benefit: "A soothing formula that helps refresh skin without stripping.",
-    accent: "from-blush to-champagne/60",
-    symbol: "◇",
-    image: "/dermanuecosmetics/assets/product-3.jpg",
-  },
-];
 
 export default function Home() {
   const headlineRef = useRef(null);
@@ -231,70 +167,40 @@ export default function Home() {
           </div>
 
           <div className="lg:col-span-6 order-1 lg:order-2 relative">
-            <div className="relative h-[460px] sm:h-[560px] lg:h-[680px]">
-              {/* 3D-perspective scrolling skincare showcase — all images from /assets, branded DERMANUE */}
-              <div
-                className="absolute inset-0 rounded-[40px] border border-champagne/40 overflow-hidden shadow-[0_40px_80px_-40px_rgba(91,58,46,0.5)] gradient-cream"
-                style={{ perspective: "1400px" }}
-              >
-                {/* The scrolling stage, tilted in 3D so the columns recede */}
-                <div
-                  className="absolute inset-0 px-3 pt-3"
-                  style={{
-                    transform: "rotateX(8deg) rotateY(-10deg) scale(1.05)",
-                    transformOrigin: "center center",
-                  }}
-                >
-                  <div className="grid grid-cols-3 gap-3 h-full">
-                    <ScrollColumn
-                      images={[
-                        "/dermanuecosmetics/assets/product-1.jpg",
-                        "/dermanuecosmetics/assets/product-4.jpg",
-                        "/dermanuecosmetics/assets/product-7.jpg",
-                        "/dermanuecosmetics/assets/product-10.jpg",
-                        "/dermanuecosmetics/assets/product-3.jpg",
-                      ]}
-                      direction="up"
-                      className="h-full"
+            <div className="relative h-[460px] sm:h-[560px] lg:h-[640px]">
+              {/* Editorial 4-image collage — each product image is unique to this section */}
+              <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-4 p-2">
+                {[
+                  { src: "/dermanuecosmetics/assets/product-1.jpg", rotate: -3, delay: 0.15 },
+                  { src: "/dermanuecosmetics/assets/product-2.jpg", rotate: 3, delay: 0.3 },
+                  { src: "/dermanuecosmetics/assets/product-3.jpg", rotate: 2, delay: 0.45 },
+                  { src: "/dermanuecosmetics/assets/product-4.jpg", rotate: -2, delay: 0.6 },
+                ].map(({ src, rotate, delay }) => (
+                  <motion.div
+                    key={src}
+                    initial={{ opacity: 0, y: 40, rotate }}
+                    animate={{ opacity: 1, y: 0, rotate }}
+                    transition={{ delay, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                    className="relative rounded-3xl overflow-hidden ring-1 ring-softwhite/40 shadow-[0_24px_50px_-25px_rgba(91,58,46,0.55)] hover:scale-[1.02] transition-transform duration-700"
+                  >
+                    <img
+                      src={src}
+                      alt="DERMANUE skincare"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <ScrollColumn
-                      images={[
-                        "/dermanuecosmetics/assets/product-2.jpg",
-                        "/dermanuecosmetics/assets/product-5.jpg",
-                        "/dermanuecosmetics/assets/product-8.jpg",
-                        "/dermanuecosmetics/assets/product-6.jpg",
-                        "/dermanuecosmetics/assets/product-9.jpg",
-                      ]}
-                      direction="down"
-                      className="h-full -mt-10"
+                    <div
+                      aria-hidden
+                      className="absolute inset-0 bg-gradient-to-t from-cocoa/55 via-transparent to-transparent pointer-events-none"
                     />
-                    <ScrollColumn
-                      images={[
-                        "/dermanuecosmetics/assets/product-3.jpg",
-                        "/dermanuecosmetics/assets/product-6.jpg",
-                        "/dermanuecosmetics/assets/product-9.jpg",
-                        "/dermanuecosmetics/assets/product-2.jpg",
-                        "/dermanuecosmetics/assets/product-5.jpg",
-                      ]}
-                      direction="up"
-                      className="h-full"
-                    />
-                  </div>
-                </div>
-
-                {/* Soft cream fades at top and bottom so cards appear to dissolve in/out */}
-                <div
-                  aria-hidden
-                  className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-cream via-cream/60 to-transparent pointer-events-none"
-                />
-                <div
-                  aria-hidden
-                  className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-cream via-cream/60 to-transparent pointer-events-none"
-                />
-                <div
-                  aria-hidden
-                  className="absolute inset-0 ring-1 ring-inset ring-softwhite/30 rounded-[40px] pointer-events-none"
-                />
+                    <div className="absolute bottom-2 inset-x-2">
+                      <div className="rounded-md bg-cocoa/75 backdrop-blur-sm py-1.5 text-center">
+                        <div className="text-[9px] tracking-[0.4em] text-softwhite leading-none">
+                          DERMANUE
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
@@ -472,27 +378,6 @@ export default function Home() {
                 </p>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED PRODUCTS PREVIEW */}
-      <section className="py-24 sm:py-32 bg-cream-2/60 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionHeader
-            eyebrow="FEATURED EDIT"
-            title="A glimpse of the beauty edit."
-            description="A small selection from the brands and products DERMANUE proudly presents to discerning customers."
-          />
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featured.map((p, i) => (
-              <ProductCard key={p.name} {...p} index={i} />
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Button to="/products" variant="primary" icon="→">
-              View All Products
-            </Button>
           </div>
         </div>
       </section>

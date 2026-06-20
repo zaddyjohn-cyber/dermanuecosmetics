@@ -18,38 +18,6 @@ const categoryList = [
 
 const products = [
   {
-    name: "Radiance Renewal Serum",
-    category: "Serums & Treatments",
-    benefit: "Supports a luminous, even-toned complexion with daily use.",
-    accent: "from-cream to-blush",
-    symbol: "✦",
-    image: "/dermanuecosmetics/assets/product-1.jpg",
-  },
-  {
-    name: "Hydra-Calm Moisturizer",
-    category: "Moisturizers",
-    benefit: "A weightless cream that helps comfort and replenish soft skin.",
-    accent: "from-rose-beige to-cream-2",
-    symbol: "❋",
-    image: "/dermanuecosmetics/assets/product-2.jpg",
-  },
-  {
-    name: "Gentle Clarity Cleanser",
-    category: "Cleansers & Toners",
-    benefit: "A soothing formula that refreshes skin without stripping.",
-    accent: "from-blush to-champagne/70",
-    symbol: "◇",
-    image: "/dermanuecosmetics/assets/product-3.jpg",
-  },
-  {
-    name: "Velvet Skin Tonic",
-    category: "Cleansers & Toners",
-    benefit: "A delicate tonic that helps balance and prepare the skin.",
-    accent: "from-cream-2 to-rose-beige",
-    symbol: "❖",
-    image: "/dermanuecosmetics/assets/product-4.jpg",
-  },
-  {
     name: "Lumière Daily SPF",
     category: "Sunscreen",
     benefit: "Daily protection with a refined, weightless finish.",
@@ -80,6 +48,22 @@ const products = [
     accent: "from-cream to-rose-beige",
     symbol: "✿",
     image: "/dermanuecosmetics/assets/product-8.jpg",
+  },
+  {
+    name: "Velvet Hydration Veil",
+    category: "Moisturizers",
+    benefit: "A weightless veil that softens and balances comfortable skin.",
+    accent: "from-rose-beige to-cream-2",
+    symbol: "❋",
+    image: "/dermanuecosmetics/assets/product-9.jpg",
+  },
+  {
+    name: "Radiance Recovery Treatment",
+    category: "Serums & Treatments",
+    benefit: "Supports a luminous, even-toned complexion with daily use.",
+    accent: "from-cream to-blush",
+    symbol: "✦",
+    image: "/dermanuecosmetics/assets/product-10.jpg",
   },
 ];
 
@@ -262,73 +246,6 @@ export default function Products() {
                 </div>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 3D SHOWCASE */}
-      <section className="py-24 sm:py-32 relative">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-3 text-[11px] tracking-luxe text-bronze mb-5">
-              <span className="line-divider" />
-              PRODUCT SHOWCASE
-            </div>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-espresso leading-tight">
-              Premium presentation, premium care.
-            </h2>
-            <p className="mt-6 text-cocoa/85 text-lg leading-relaxed">
-              The way a product is presented reflects how it's been made. We
-              honor the craft of every brand we work with — from refined
-              packaging to the science inside the bottle.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button to="/contact" variant="primary" icon="→">
-                Speak with DERMANUE
-              </Button>
-              <Button to="/about" variant="outline">
-                Our Standards
-              </Button>
-            </div>
-          </div>
-          <div className="lg:col-span-7">
-            <div className="relative h-[420px] sm:h-[520px] rounded-[40px] overflow-hidden border border-champagne/40">
-              <div className="grid grid-cols-3 grid-rows-2 gap-2 h-full p-2 bg-softwhite/60">
-                {[
-                  "/dermanuecosmetics/assets/product-6.jpg",
-                  "/dermanuecosmetics/assets/product-7.jpg",
-                  "/dermanuecosmetics/assets/product-8.jpg",
-                  "/dermanuecosmetics/assets/product-9.jpg",
-                  "/dermanuecosmetics/assets/product-10.jpg",
-                  "/dermanuecosmetics/assets/lifestyle-1.png",
-                ].map((src, i) => (
-                  <div
-                    key={src}
-                    className={`relative overflow-hidden rounded-2xl group ${
-                      i === 0 ? "row-span-2 col-span-1" : ""
-                    }`}
-                  >
-                    <img
-                      src={src}
-                      alt="DERMANUE skincare"
-                      loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div
-                      aria-hidden
-                      className="absolute inset-0 bg-gradient-to-t from-cocoa/35 via-transparent to-transparent"
-                    />
-                  </div>
-                ))}
-              </div>
-              <div
-                aria-hidden
-                className="absolute inset-0 ring-1 ring-inset ring-champagne/40 rounded-[40px] pointer-events-none"
-              />
-              <div className="absolute top-4 left-4 glass-card rounded-full px-3.5 py-1.5 text-[9px] tracking-luxe text-cocoa">
-                THE DERMANUE EDIT
-              </div>
-            </div>
           </div>
         </div>
       </section>
