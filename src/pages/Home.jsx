@@ -195,16 +195,21 @@ export default function Home() {
 
           <div className="lg:col-span-6 order-1 lg:order-2 relative">
             <div className="relative h-[420px] sm:h-[520px] lg:h-[640px]">
-              {/* Main lifestyle skincare image */}
+              {/* Main hero video (background, autoplaying) */}
               <div className="absolute inset-0 rounded-[40px] border border-champagne/40 overflow-hidden shadow-[0_40px_80px_-40px_rgba(91,58,46,0.5)]">
-                <img
-                  src="/dermanuecosmetics/assets/lifestyle-1.png"
-                  alt="Authentic skincare ritual"
+                <video
+                  src="/dermanuecosmetics/assets/hero-video.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  poster="/dermanuecosmetics/assets/lifestyle-1.png"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div
                   aria-hidden
-                  className="absolute inset-0 bg-gradient-to-tr from-cream/30 via-transparent to-blush/25"
+                  className="absolute inset-0 bg-gradient-to-tr from-cream/25 via-transparent to-blush/20"
                 />
                 <div
                   aria-hidden
@@ -214,6 +219,48 @@ export default function Home() {
                   aria-hidden
                   className="absolute inset-0 ring-1 ring-inset ring-softwhite/30 rounded-[40px]"
                 />
+
+                {/* Skincare product images shown OVER the rolling video */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30, rotate: -6 }}
+                  animate={{ opacity: 1, y: 0, rotate: -6 }}
+                  transition={{ delay: 0.6, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute top-20 left-6 sm:left-10 w-24 h-32 sm:w-28 sm:h-36 rounded-2xl overflow-hidden shadow-[0_30px_50px_-20px_rgba(91,58,46,0.7)] ring-1 ring-softwhite/40 float-slow"
+                >
+                  <img
+                    src="/dermanuecosmetics/assets/product-6.jpg"
+                    alt="Featured skincare"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: -30, rotate: 8 }}
+                  animate={{ opacity: 1, y: 0, rotate: 8 }}
+                  transition={{ delay: 0.85, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute top-1/2 -translate-y-1/2 right-6 sm:right-12 w-24 h-32 sm:w-28 sm:h-36 rounded-2xl overflow-hidden shadow-[0_30px_50px_-20px_rgba(91,58,46,0.7)] ring-1 ring-softwhite/40"
+                  style={{ animationDelay: "0.4s" }}
+                >
+                  <img
+                    src="/dermanuecosmetics/assets/product-7.jpg"
+                    alt="Featured skincare"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30, rotate: -3 }}
+                  animate={{ opacity: 1, y: 0, rotate: -3 }}
+                  transition={{ delay: 1.1, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute bottom-24 left-1/2 -translate-x-1/2 w-24 h-32 sm:w-28 sm:h-36 rounded-2xl overflow-hidden shadow-[0_30px_50px_-20px_rgba(91,58,46,0.7)] ring-1 ring-softwhite/40 float-slow"
+                  style={{ animationDelay: "0.8s" }}
+                >
+                  <img
+                    src="/dermanuecosmetics/assets/product-8.jpg"
+                    alt="Featured skincare"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </motion.div>
 
                 {/* Top chips */}
                 <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
