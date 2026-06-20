@@ -20,22 +20,22 @@ const categories = [
   {
     name: "Skincare",
     desc: "Targeted treatments that support healthier, balanced skin.",
-    accent: "from-cream to-rose-beige",
+    image: "/dermanuecosmetics/assets/cat-skincare.jpg",
   },
   {
     name: "Cosmetics",
     desc: "Refined essentials crafted by trusted beauty houses.",
-    accent: "from-rose-beige to-blush",
+    image: "/dermanuecosmetics/assets/cat-cosmetics.jpg",
   },
   {
     name: "Beauty Essentials",
     desc: "Everyday luxuries curated for clean, modern routines.",
-    accent: "from-blush to-champagne/70",
+    image: "/dermanuecosmetics/assets/cat-beauty.jpg",
   },
   {
     name: "Personal Care",
     desc: "Gentle, effective formulas for a complete care ritual.",
-    accent: "from-cream-2 to-rose-beige",
+    image: "/dermanuecosmetics/assets/cat-personal.jpg",
   },
 ];
 
@@ -272,18 +272,17 @@ export default function Home() {
                 transition={{ delay: i * 0.08, duration: 0.7 }}
                 className="group relative rounded-3xl overflow-hidden border border-champagne/40 bg-softwhite/60 backdrop-blur-md p-6 hover:-translate-y-1 hover:shadow-[0_28px_60px_-30px_rgba(91,58,46,0.35)] transition-all duration-500"
               >
-                <div
-                  className={`aspect-square rounded-2xl bg-gradient-to-br ${c.accent} relative overflow-hidden`}
-                >
+                <div className="aspect-square rounded-2xl relative overflow-hidden bg-cream">
+                  <img
+                    src={c.image}
+                    alt={c.name}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                   <div
                     aria-hidden
-                    className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-softwhite/40 blur-2xl"
+                    className="absolute inset-0 bg-gradient-to-t from-cocoa/30 via-transparent to-transparent pointer-events-none"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="font-display text-3xl text-espresso/85">
-                      0{i + 1}
-                    </div>
-                  </div>
                 </div>
                 <div className="mt-5">
                   <h3 className="font-display text-2xl text-espresso">
