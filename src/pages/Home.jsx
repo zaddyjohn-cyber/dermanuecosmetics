@@ -168,41 +168,61 @@ export default function Home() {
           </div>
 
           <div className="lg:col-span-6 order-1 lg:order-2 relative">
-            <div className="relative h-[460px] sm:h-[560px] lg:h-[640px]">
-              {/* Editorial 4-image collage — each product image is unique to this section */}
-              <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-4 p-2">
-                {[
-                  { src: "/dermanuecosmetics/assets/product-1.jpg", rotate: -3, delay: 0.15 },
-                  { src: "/dermanuecosmetics/assets/product-2.jpg", rotate: 3, delay: 0.3 },
-                  { src: "/dermanuecosmetics/assets/product-3.jpg", rotate: 2, delay: 0.45 },
-                  { src: "/dermanuecosmetics/assets/product-4.jpg", rotate: -2, delay: 0.6 },
-                ].map(({ src, rotate, delay }) => (
-                  <motion.div
-                    key={src}
-                    initial={{ opacity: 0, y: 40, rotate }}
-                    animate={{ opacity: 1, y: 0, rotate }}
-                    transition={{ delay, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                    className="relative rounded-3xl overflow-hidden ring-1 ring-softwhite/40 shadow-[0_24px_50px_-25px_rgba(91,58,46,0.55)] hover:scale-[1.02] transition-transform duration-700"
-                  >
-                    <img
-                      src={src}
-                      alt="DERMANUE skincare"
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    <div
-                      aria-hidden
-                      className="absolute inset-0 bg-gradient-to-t from-cocoa/55 via-transparent to-transparent pointer-events-none"
-                    />
-                    <div className="absolute bottom-2 inset-x-2">
-                      <div className="rounded-md bg-cocoa/75 backdrop-blur-sm py-1.5 text-center">
-                        <div className="text-[9px] tracking-[0.4em] text-softwhite leading-none">
-                          DERMANUE
-                        </div>
+            <div className="relative h-[460px] sm:h-[560px] lg:h-[640px] orbit-pause">
+              {/* Decorative orbit ring */}
+              <div
+                aria-hidden
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-champagne/50"
+                style={{
+                  width: "calc(var(--orbit-r) * 2)",
+                  height: "calc(var(--orbit-r) * 2)",
+                }}
+              />
+              {/* Soft glow at center */}
+              <div
+                aria-hidden
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full bg-blush/30 blur-3xl"
+              />
+              {/* Central DERMANUE mark */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+                <div className="font-display text-2xl text-espresso tracking-[0.32em]">
+                  DERMANUE
+                </div>
+                <div className="text-[9px] tracking-[0.4em] text-bronze mt-1">
+                  AUTHENTIC · SCIENCE-BACKED
+                </div>
+              </div>
+
+              {/* Four product cards orbiting in a circle */}
+              {[
+                "/dermanuecosmetics/assets/product-1.jpg",
+                "/dermanuecosmetics/assets/product-2.jpg",
+                "/dermanuecosmetics/assets/product-3.jpg",
+                "/dermanuecosmetics/assets/product-4.jpg",
+              ].map((src, i) => (
+                <div
+                  key={src}
+                  className="orbit-card absolute top-1/2 left-1/2 w-[110px] h-[140px] sm:w-[130px] sm:h-[170px] lg:w-[150px] lg:h-[195px] rounded-2xl overflow-hidden ring-1 ring-softwhite/40 shadow-[0_24px_50px_-25px_rgba(91,58,46,0.55)] hover:scale-[1.04] hover:z-10 transition-transform duration-500"
+                  style={{ animationDelay: `${-(i * 7)}s` }}
+                >
+                  <img
+                    src={src}
+                    alt="DERMANUE skincare"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 bg-gradient-to-t from-cocoa/55 via-transparent to-transparent pointer-events-none"
+                  />
+                  <div className="absolute bottom-2 inset-x-2">
+                    <div className="rounded-md bg-cocoa/75 backdrop-blur-sm py-1.5 text-center">
+                      <div className="text-[9px] tracking-[0.4em] text-softwhite leading-none">
+                        DERMANUE
                       </div>
                     </div>
-                  </motion.div>
-                ))}
-              </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

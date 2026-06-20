@@ -83,6 +83,25 @@ body {
 }
 .float-slow { animation: floatY 7s ease-in-out infinite; }
 
+/* Circular orbit animation for the hero cards.
+   Each card sits at top:50%/left:50% and translateY's outward by --orbit-r,
+   then the outer rotate sweeps it around, while the inner counter-rotate
+   keeps the card upright so the DERMANUE label stays readable. */
+:root { --orbit-r: 200px; }
+@media (max-width: 1024px) { :root { --orbit-r: 170px; } }
+@media (max-width: 640px) { :root { --orbit-r: 130px; } }
+
+@keyframes orbit-around {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(calc(var(--orbit-r) * -1)) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg) translateY(calc(var(--orbit-r) * -1)) rotate(-360deg);
+  }
+}
+.orbit-card { animation: orbit-around 28s linear infinite; }
+.orbit-pause:hover .orbit-card { animation-play-state: paused; }
+
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
