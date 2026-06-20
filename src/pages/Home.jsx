@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,68 +9,38 @@ import ProductCard from "../components/ProductCard.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const heroImages = [
-  "/dermanuecosmetics/assets/product-1.jpg",
-  "/dermanuecosmetics/assets/product-2.jpg",
-  "/dermanuecosmetics/assets/product-3.jpg",
-  "/dermanuecosmetics/assets/product-4.jpg",
-  "/dermanuecosmetics/assets/product-5.jpg",
-  "/dermanuecosmetics/assets/product-6.jpg",
-  "/dermanuecosmetics/assets/product-7.jpg",
-  "/dermanuecosmetics/assets/product-8.jpg",
-  "/dermanuecosmetics/assets/product-9.jpg",
-  "/dermanuecosmetics/assets/product-10.jpg",
-];
-
-function RotatingImage({
-  startIndex = 0,
-  intervalMs = 3500,
-  delayMs = 0,
-  className = "",
-  rotate = 0,
-}) {
-  const [idx, setIdx] = useState(startIndex % heroImages.length);
-  useEffect(() => {
-    let timerId;
-    const timeoutId = setTimeout(() => {
-      timerId = setInterval(
-        () => setIdx((i) => (i + 1) % heroImages.length),
-        intervalMs
-      );
-    }, delayMs);
-    return () => {
-      clearTimeout(timeoutId);
-      if (timerId) clearInterval(timerId);
-    };
-  }, [intervalMs, delayMs]);
-
+function HeroCard({ src }) {
   return (
-    <div
-      className={`absolute rounded-2xl overflow-hidden shadow-[0_30px_50px_-20px_rgba(91,58,46,0.7)] ring-1 ring-softwhite/40 ${className}`}
-      style={{ transform: `rotate(${rotate}deg)` }}
-    >
-      <AnimatePresence mode="wait">
-        <motion.img
-          key={heroImages[idx]}
-          src={heroImages[idx]}
-          alt="DERMANUE skincare"
-          initial={{ opacity: 0, scale: 1.08 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.96 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      </AnimatePresence>
+    <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_24px_40px_-20px_rgba(91,58,46,0.55)] ring-1 ring-softwhite/40">
+      <img
+        src={src}
+        alt="DERMANUE skincare"
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+      />
       <div
         aria-hidden
         className="absolute inset-0 bg-gradient-to-t from-cocoa/55 via-transparent to-transparent pointer-events-none"
       />
       <div className="absolute bottom-1.5 inset-x-1.5">
-        <div className="rounded-lg bg-cocoa/70 backdrop-blur-sm py-1 text-center">
+        <div className="rounded-md bg-cocoa/75 backdrop-blur-sm py-1 text-center">
           <div className="text-[8px] tracking-[0.36em] text-softwhite leading-none">
             DERMANUE
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function ScrollColumn({ images, direction = "up", className = "" }) {
+  const animClass = direction === "down" ? "scroll-down" : "scroll-up";
+  return (
+    <div className={`relative overflow-hidden ${className}`}>
+      <div className={`flex flex-col gap-3 ${animClass}`}>
+        {[...images, ...images].map((src, i) => (
+          <HeroCard key={`${src}-${i}`} src={src} />
+        ))}
       </div>
     </div>
   );
@@ -261,76 +231,71 @@ export default function Home() {
           </div>
 
           <div className="lg:col-span-6 order-1 lg:order-2 relative">
-            <div className="relative h-[420px] sm:h-[520px] lg:h-[640px]">
-              {/* Hero video — background, autoplaying */}
-              <div className="absolute inset-0 rounded-[40px] border border-champagne/40 overflow-hidden shadow-[0_40px_80px_-40px_rgba(91,58,46,0.5)]">
-                <video
-                  src="/dermanuecosmetics/assets/hero-video.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  poster="/dermanuecosmetics/assets/lifestyle-1.png"
-                  className="absolute inset-0 w-full h-full object-cover"
+            <div className="relative h-[460px] sm:h-[560px] lg:h-[680px]">
+              {/* 3D-perspective scrolling skincare showcase — all images from /assets, branded DERMANUE */}
+              <div
+                className="absolute inset-0 rounded-[40px] border border-champagne/40 overflow-hidden shadow-[0_40px_80px_-40px_rgba(91,58,46,0.5)] gradient-cream"
+                style={{ perspective: "1400px" }}
+              >
+                {/* The scrolling stage, tilted in 3D so the columns recede */}
+                <div
+                  className="absolute inset-0 px-3 pt-3"
+                  style={{
+                    transform: "rotateX(8deg) rotateY(-10deg) scale(1.05)",
+                    transformOrigin: "center center",
+                  }}
+                >
+                  <div className="grid grid-cols-3 gap-3 h-full">
+                    <ScrollColumn
+                      images={[
+                        "/dermanuecosmetics/assets/product-1.jpg",
+                        "/dermanuecosmetics/assets/product-4.jpg",
+                        "/dermanuecosmetics/assets/product-7.jpg",
+                        "/dermanuecosmetics/assets/product-10.jpg",
+                        "/dermanuecosmetics/assets/product-3.jpg",
+                      ]}
+                      direction="up"
+                      className="h-full"
+                    />
+                    <ScrollColumn
+                      images={[
+                        "/dermanuecosmetics/assets/product-2.jpg",
+                        "/dermanuecosmetics/assets/product-5.jpg",
+                        "/dermanuecosmetics/assets/product-8.jpg",
+                        "/dermanuecosmetics/assets/product-6.jpg",
+                        "/dermanuecosmetics/assets/product-9.jpg",
+                      ]}
+                      direction="down"
+                      className="h-full -mt-10"
+                    />
+                    <ScrollColumn
+                      images={[
+                        "/dermanuecosmetics/assets/product-3.jpg",
+                        "/dermanuecosmetics/assets/product-6.jpg",
+                        "/dermanuecosmetics/assets/product-9.jpg",
+                        "/dermanuecosmetics/assets/product-2.jpg",
+                        "/dermanuecosmetics/assets/product-5.jpg",
+                      ]}
+                      direction="up"
+                      className="h-full"
+                    />
+                  </div>
+                </div>
+
+                {/* Soft cream fades at top and bottom so cards appear to dissolve in/out */}
+                <div
+                  aria-hidden
+                  className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-cream via-cream/60 to-transparent pointer-events-none"
                 />
                 <div
                   aria-hidden
-                  className="absolute inset-0 bg-gradient-to-tr from-cream/20 via-transparent to-blush/15"
+                  className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-cream via-cream/60 to-transparent pointer-events-none"
                 />
                 <div
                   aria-hidden
-                  className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-cocoa/45 to-transparent"
-                />
-                <div
-                  aria-hidden
-                  className="absolute inset-0 ring-1 ring-inset ring-softwhite/30 rounded-[40px]"
+                  className="absolute inset-0 ring-1 ring-inset ring-softwhite/30 rounded-[40px] pointer-events-none"
                 />
               </div>
-
-              {/* Rotating skincare images layered OVER the video — every card is just an image + DERMANUE branding */}
-              <RotatingImage
-                startIndex={0}
-                intervalMs={3200}
-                delayMs={400}
-                rotate={-7}
-                className="w-24 h-32 sm:w-28 sm:h-36 top-10 left-4 sm:left-8 float-slow"
-              />
-              <RotatingImage
-                startIndex={2}
-                intervalMs={3600}
-                delayMs={900}
-                rotate={6}
-                className="w-24 h-32 sm:w-28 sm:h-36 top-6 right-6 sm:right-10"
-              />
-              <RotatingImage
-                startIndex={4}
-                intervalMs={3400}
-                delayMs={1400}
-                rotate={4}
-                className="w-20 h-28 sm:w-24 sm:h-32 top-1/2 -translate-y-1/2 right-2 sm:right-4"
-              />
-              <RotatingImage
-                startIndex={6}
-                intervalMs={3800}
-                delayMs={1900}
-                rotate={-4}
-                className="w-24 h-32 sm:w-28 sm:h-36 bottom-6 left-6 sm:left-12 float-slow"
-              />
-              <RotatingImage
-                startIndex={8}
-                intervalMs={3300}
-                delayMs={2400}
-                rotate={8}
-                className="w-28 h-36 sm:w-32 sm:h-40 bottom-10 right-6 sm:right-12"
-              />
-              <RotatingImage
-                startIndex={1}
-                intervalMs={4000}
-                delayMs={2900}
-                rotate={-3}
-                className="hidden lg:block w-20 h-28 top-1/2 -translate-y-1/2 left-2"
-              />
             </div>
           </div>
         </div>
