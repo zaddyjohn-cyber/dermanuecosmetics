@@ -69,7 +69,7 @@ const featured = [
     benefit: "Helps support a luminous, even-toned complexion with daily use.",
     accent: "from-cream to-blush",
     symbol: "✦",
-    image: "/assets/product-1.jpg",
+    image: "/dermanuecosmetics/assets/product-1.jpg",
   },
   {
     name: "Hydra-Calm Moisturizer",
@@ -77,7 +77,7 @@ const featured = [
     benefit: "A weightless cream that helps comfort and replenish soft skin.",
     accent: "from-rose-beige to-cream-2",
     symbol: "❋",
-    image: "/assets/product-2.jpg",
+    image: "/dermanuecosmetics/assets/product-2.jpg",
   },
   {
     name: "Gentle Clarity Cleanser",
@@ -85,7 +85,7 @@ const featured = [
     benefit: "A soothing formula that helps refresh skin without stripping.",
     accent: "from-blush to-champagne/60",
     symbol: "◇",
-    image: "/assets/product-3.jpg",
+    image: "/dermanuecosmetics/assets/product-3.jpg",
   },
 ];
 
@@ -198,7 +198,7 @@ export default function Home() {
               {/* Main lifestyle skincare image */}
               <div className="absolute inset-0 rounded-[40px] border border-champagne/40 overflow-hidden shadow-[0_40px_80px_-40px_rgba(91,58,46,0.5)]">
                 <img
-                  src="/assets/lifestyle-1.png"
+                  src="/dermanuecosmetics/assets/lifestyle-1.png"
                   alt="Authentic skincare ritual"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -258,7 +258,7 @@ export default function Home() {
                 className="hidden md:flex absolute -left-10 top-16 glass-card rounded-2xl p-3 shadow-[0_24px_40px_-20px_rgba(91,58,46,0.55)] gap-3 items-center float-slow"
               >
                 <img
-                  src="/assets/product-1.jpg"
+                  src="/dermanuecosmetics/assets/product-1.jpg"
                   alt="Hydrating serum"
                   className="w-16 h-20 object-cover rounded-xl"
                   loading="lazy"
@@ -281,7 +281,7 @@ export default function Home() {
                 className="hidden md:flex absolute -right-10 bottom-28 glass-card rounded-2xl p-3 shadow-[0_24px_40px_-20px_rgba(91,58,46,0.55)] gap-3 items-center"
               >
                 <img
-                  src="/assets/product-2.jpg"
+                  src="/dermanuecosmetics/assets/product-2.jpg"
                   alt="Hydrating moisturizer"
                   className="w-16 h-20 object-cover rounded-xl"
                   loading="lazy"
@@ -305,7 +305,7 @@ export default function Home() {
                 className="hidden lg:flex absolute -right-6 top-6 glass-card rounded-full p-1.5 shadow-[0_18px_30px_-15px_rgba(91,58,46,0.5)] items-center gap-2 pr-3"
               >
                 <img
-                  src="/assets/product-3.jpg"
+                  src="/dermanuecosmetics/assets/product-3.jpg"
                   alt="Gentle cleanser"
                   className="w-10 h-10 object-cover rounded-full"
                   loading="lazy"
@@ -404,7 +404,7 @@ export default function Home() {
             <div className="relative rounded-[36px] overflow-hidden border border-champagne/40">
               <div className="aspect-[4/5] relative">
                 <img
-                  src="/assets/lifestyle-1.png"
+                  src="/dermanuecosmetics/assets/lifestyle-1.png"
                   alt="DERMANUE skincare lifestyle"
                   className="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"

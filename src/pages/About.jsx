@@ -45,7 +45,7 @@ export default function About() {
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <img
-                    src="/assets/dermanue-logo.jpeg"
+                    src="/dermanuecosmetics/assets/dermanue-logo.jpeg"
                     alt="DERMANUE"
                     className="w-2/3 max-w-xs float-slow"
                   />

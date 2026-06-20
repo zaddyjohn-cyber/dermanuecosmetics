@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="md:col-span-5">
             <Link to="/" className="flex items-center gap-3">
               <img
-                src="/assets/dermanue-logo.jpeg"
+                src="/dermanuecosmetics/assets/dermanue-logo.jpeg"
                 alt="DERMANUE"
                 className="h-14 w-14 rounded-full ring-1 ring-champagne/60"
               />

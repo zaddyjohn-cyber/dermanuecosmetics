@@ -23,7 +23,7 @@ const products = [
     benefit: "Supports a luminous, even-toned complexion with daily use.",
     accent: "from-cream to-blush",
     symbol: "✦",
-    image: "/assets/product-1.jpg",
+    image: "/dermanuecosmetics/assets/product-1.jpg",
   },
   {
     name: "Hydra-Calm Moisturizer",
@@ -31,7 +31,7 @@ const products = [
     benefit: "A weightless cream that helps comfort and replenish soft skin.",
     accent: "from-rose-beige to-cream-2",
     symbol: "❋",
-    image: "/assets/product-2.jpg",
+    image: "/dermanuecosmetics/assets/product-2.jpg",
   },
   {
     name: "Gentle Clarity Cleanser",
@@ -39,7 +39,7 @@ const products = [
     benefit: "A soothing formula that refreshes skin without stripping.",
     accent: "from-blush to-champagne/70",
     symbol: "◇",
-    image: "/assets/product-3.jpg",
+    image: "/dermanuecosmetics/assets/product-3.jpg",
   },
   {
     name: "Velvet Skin Tonic",
@@ -47,7 +47,7 @@ const products = [
     benefit: "A delicate tonic that helps balance and prepare the skin.",
     accent: "from-cream-2 to-rose-beige",
     symbol: "❖",
-    image: "/assets/product-4.jpg",
+    image: "/dermanuecosmetics/assets/product-4.jpg",
   },
   {
     name: "Lumière Daily SPF",
@@ -55,7 +55,7 @@ const products = [
     benefit: "Daily protection with a refined, weightless finish.",
     accent: "from-cream to-champagne/60",
     symbol: "☀",
-    image: "/assets/product-5.jpg",
+    image: "/dermanuecosmetics/assets/product-5.jpg",
   },
   {
     name: "Silk Skin Body Lotion",
@@ -63,7 +63,7 @@ const products = [
     benefit: "Soft, nourishing care for smooth, comfortable body skin.",
     accent: "from-rose-beige to-blush",
     symbol: "✺",
-    image: "/assets/product-6.jpg",
+    image: "/dermanuecosmetics/assets/product-6.jpg",
   },
   {
     name: "Satin Lip Veil",
@@ -71,7 +71,7 @@ const products = [
     benefit: "A modern, soft-finish lip color for everyday wear.",
     accent: "from-blush to-rose-beige",
     symbol: "◈",
-    image: "/assets/product-7.jpg",
+    image: "/dermanuecosmetics/assets/product-7.jpg",
   },
   {
     name: "Pure Glow Essence",
@@ -79,7 +79,7 @@ const products = [
     benefit: "A featherlight essence that supports a healthy glow.",
     accent: "from-cream to-rose-beige",
     symbol: "✿",
-    image: "/assets/product-8.jpg",
+    image: "/dermanuecosmetics/assets/product-8.jpg",
   },
 ];
 
@@ -295,12 +295,12 @@ export default function Products() {
             <div className="relative h-[420px] sm:h-[520px] rounded-[40px] overflow-hidden border border-champagne/40">
               <div className="grid grid-cols-3 grid-rows-2 gap-2 h-full p-2 bg-softwhite/60">
                 {[
-                  "/assets/product-6.jpg",
-                  "/assets/product-7.jpg",
-                  "/assets/product-8.jpg",
-                  "/assets/product-9.jpg",
-                  "/assets/product-10.jpg",
-                  "/assets/lifestyle-1.png",
+                  "/dermanuecosmetics/assets/product-6.jpg",
+                  "/dermanuecosmetics/assets/product-7.jpg",
+                  "/dermanuecosmetics/assets/product-8.jpg",
+                  "/dermanuecosmetics/assets/product-9.jpg",
+                  "/dermanuecosmetics/assets/product-10.jpg",
+                  "/dermanuecosmetics/assets/lifestyle-1.png",
                 ].map((src, i) => (
                   <div
                     key={src}
