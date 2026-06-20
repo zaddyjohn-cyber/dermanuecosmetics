@@ -4,7 +4,6 @@ import PageHero from "../components/PageHero.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 import Button from "../components/Button.jsx";
-import ThreeProductScene from "../components/ThreeProductScene.jsx";
 
 const categoryList = [
   { name: "Facial Care", icon: "❖" },
@@ -64,7 +63,7 @@ const products = [
     benefit: "Soft, nourishing care for smooth, comfortable body skin.",
     accent: "from-rose-beige to-blush",
     symbol: "✺",
-    image: "/assets/product-1.jpg",
+    image: "/assets/product-6.jpg",
   },
   {
     name: "Satin Lip Veil",
@@ -72,7 +71,7 @@ const products = [
     benefit: "A modern, soft-finish lip color for everyday wear.",
     accent: "from-blush to-rose-beige",
     symbol: "◈",
-    image: "/assets/product-2.jpg",
+    image: "/assets/product-7.jpg",
   },
   {
     name: "Pure Glow Essence",
@@ -80,7 +79,7 @@ const products = [
     benefit: "A featherlight essence that supports a healthy glow.",
     accent: "from-cream to-rose-beige",
     symbol: "✿",
-    image: "/assets/product-3.jpg",
+    image: "/assets/product-8.jpg",
   },
 ];
 
@@ -293,8 +292,42 @@ export default function Products() {
             </div>
           </div>
           <div className="lg:col-span-7">
-            <div className="relative h-[420px] sm:h-[520px] rounded-[40px] overflow-hidden border border-champagne/40 gradient-cream">
-              <ThreeProductScene variant="showcase" />
+            <div className="relative h-[420px] sm:h-[520px] rounded-[40px] overflow-hidden border border-champagne/40">
+              <div className="grid grid-cols-3 grid-rows-2 gap-2 h-full p-2 bg-softwhite/60">
+                {[
+                  "/assets/product-6.jpg",
+                  "/assets/product-7.jpg",
+                  "/assets/product-8.jpg",
+                  "/assets/product-9.jpg",
+                  "/assets/product-10.jpg",
+                  "/assets/lifestyle-1.png",
+                ].map((src, i) => (
+                  <div
+                    key={src}
+                    className={`relative overflow-hidden rounded-2xl group ${
+                      i === 0 ? "row-span-2 col-span-1" : ""
+                    }`}
+                  >
+                    <img
+                      src={src}
+                      alt="DERMANUE skincare"
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div
+                      aria-hidden
+                      className="absolute inset-0 bg-gradient-to-t from-cocoa/35 via-transparent to-transparent"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div
+                aria-hidden
+                className="absolute inset-0 ring-1 ring-inset ring-champagne/40 rounded-[40px] pointer-events-none"
+              />
+              <div className="absolute top-4 left-4 glass-card rounded-full px-3.5 py-1.5 text-[9px] tracking-luxe text-cocoa">
+                THE DERMANUE EDIT
+              </div>
             </div>
           </div>
         </div>

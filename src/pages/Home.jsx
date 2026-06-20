@@ -194,50 +194,48 @@ export default function Home() {
           </div>
 
           <div className="lg:col-span-6 order-1 lg:order-2 relative">
-            <div className="relative h-[420px] sm:h-[520px] lg:h-[620px]">
-              <div className="absolute inset-0 rounded-[40px] border border-champagne/40 overflow-hidden shadow-[0_40px_80px_-40px_rgba(91,58,46,0.45)]">
-                <video
-                  src="/assets/hero-video.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  poster="/assets/dermanue-logo.jpeg"
+            <div className="relative h-[420px] sm:h-[520px] lg:h-[640px]">
+              {/* Main lifestyle skincare image */}
+              <div className="absolute inset-0 rounded-[40px] border border-champagne/40 overflow-hidden shadow-[0_40px_80px_-40px_rgba(91,58,46,0.5)]">
+                <img
+                  src="/assets/lifestyle-1.png"
+                  alt="Authentic skincare ritual"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div
                   aria-hidden
-                  className="absolute inset-0 bg-gradient-to-tr from-cream/60 via-cream/15 to-blush/40 mix-blend-soft-light"
+                  className="absolute inset-0 bg-gradient-to-tr from-cream/30 via-transparent to-blush/25"
                 />
                 <div
                   aria-hidden
-                  className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-cream/55"
+                  className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-cocoa/55 via-cocoa/15 to-transparent"
                 />
                 <div
                   aria-hidden
                   className="absolute inset-0 ring-1 ring-inset ring-softwhite/30 rounded-[40px]"
                 />
 
+                {/* Top chips */}
                 <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
                   <div className="glass-card rounded-full px-3.5 py-1.5 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-bronze animate-pulse" />
                     <span className="text-[9px] tracking-luxe text-cocoa">
-                      LIVE EDIT
+                      AUTHENTIC SKINCARE
                     </span>
                   </div>
                   <div className="glass-card rounded-full px-3.5 py-1.5 text-[9px] tracking-luxe text-cocoa">
-                    DERMANUE · 2026
+                    SCIENCE-BACKED
                   </div>
                 </div>
 
+                {/* Bottom skincare ritual card */}
                 <div className="absolute bottom-5 left-5 right-5 glass-card rounded-2xl p-4 flex items-center justify-between gap-3">
                   <div>
                     <div className="text-[9px] tracking-luxe text-bronze">
-                      DAILY RITUAL
+                      DAILY SKINCARE RITUAL
                     </div>
-                    <div className="font-display text-espresso text-base sm:text-lg leading-tight">
-                      Skincare, refined.
+                    <div className="font-display text-softwhite text-base sm:text-lg leading-tight text-shadow-soft">
+                      Trusted care, refined.
                     </div>
                   </div>
                   <div className="flex items-center gap-1.5">
@@ -251,6 +249,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+
+              {/* Floating skincare product cards */}
               <motion.div
                 initial={{ opacity: 0, x: 30, y: 10 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
@@ -258,42 +258,60 @@ export default function Home() {
                 className="hidden md:flex absolute -left-10 top-16 glass-card rounded-2xl p-3 shadow-[0_24px_40px_-20px_rgba(91,58,46,0.55)] gap-3 items-center float-slow"
               >
                 <img
-                  src="/assets/product-4.jpg"
-                  alt="Skincare product"
+                  src="/assets/product-1.jpg"
+                  alt="Hydrating serum"
                   className="w-16 h-20 object-cover rounded-xl"
                   loading="lazy"
                 />
                 <div className="pr-2">
-                  <div className="text-[9px] tracking-luxe text-bronze">CURATED</div>
+                  <div className="text-[9px] tracking-luxe text-bronze">SERUM</div>
                   <div className="font-display text-espresso text-base leading-tight">
-                    Premium Edit
+                    Radiance Renewal
                   </div>
                   <div className="mt-1 text-[10px] text-cocoa/70">
-                    Featured today
+                    For glowing skin
                   </div>
                 </div>
               </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, x: -30, y: 10 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ delay: 1.3, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className="hidden md:flex absolute -right-10 bottom-24 glass-card rounded-2xl p-3 shadow-[0_24px_40px_-20px_rgba(91,58,46,0.55)] gap-3 items-center"
-                style={{ animationDelay: "1.5s" }}
+                className="hidden md:flex absolute -right-10 bottom-28 glass-card rounded-2xl p-3 shadow-[0_24px_40px_-20px_rgba(91,58,46,0.55)] gap-3 items-center"
               >
                 <img
-                  src="/assets/product-5.jpg"
-                  alt="Skincare product"
+                  src="/assets/product-2.jpg"
+                  alt="Hydrating moisturizer"
                   className="w-16 h-20 object-cover rounded-xl"
                   loading="lazy"
                 />
                 <div className="pr-2">
-                  <div className="text-[9px] tracking-luxe text-bronze">VERIFIED</div>
+                  <div className="text-[9px] tracking-luxe text-bronze">MOISTURIZER</div>
                   <div className="font-display text-espresso text-base leading-tight">
-                    Authentic
+                    Hydra-Calm
                   </div>
                   <div className="mt-1 text-[10px] text-cocoa/70">
-                    Trusted sources
+                    Soft, balanced skin
                   </div>
+                </div>
+              </motion.div>
+
+              {/* Floating accent badge — product 3 thumbnail */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.5, duration: 0.8 }}
+                className="hidden lg:flex absolute -right-6 top-6 glass-card rounded-full p-1.5 shadow-[0_18px_30px_-15px_rgba(91,58,46,0.5)] items-center gap-2 pr-3"
+              >
+                <img
+                  src="/assets/product-3.jpg"
+                  alt="Gentle cleanser"
+                  className="w-10 h-10 object-cover rounded-full"
+                  loading="lazy"
+                />
+                <div className="text-[9px] tracking-luxe text-cocoa">
+                  NEW ARRIVAL
                 </div>
               </motion.div>
             </div>
