@@ -4,6 +4,7 @@ import PageHero from "../components/PageHero.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 import Button from "../components/Button.jsx";
+import VideoCard from "../components/VideoCard.jsx";
 
 const categoryList = [
   { name: "Facial Care", icon: "❖" },
@@ -204,6 +205,16 @@ export default function Products() {
             {filtered.map((p, i) => (
               <ProductCard key={p.name} {...p} index={i} />
             ))}
+            {/* Featured UGC ad card slots into the product grid */}
+            <div className="sm:col-span-2 lg:col-span-2 flex items-stretch">
+              <VideoCard
+                src="/dermanuecosmetics/assets/pinvideosaver_uh6kug5d.mp4"
+                category="FEATURED EDIT"
+                tagline="Skincare that earns its place."
+                aspect="aspect-auto"
+                className="w-full h-full min-h-[420px]"
+              />
+            </div>
           </div>
           {filtered.length === 0 && (
             <div className="text-center text-cocoa/70 py-12">
@@ -225,27 +236,38 @@ export default function Products() {
             title="Every brand earns its place on the DERMANUE shelf."
             description="Our selection process ensures every product we present is authentic, safe, and worthy of the trust our customers place in us."
           />
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
-            {selectionCriteria.map((s, i) => (
-              <motion.div
-                key={s.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ delay: i * 0.08, duration: 0.7 }}
-                className="relative rounded-3xl border border-champagne/40 bg-softwhite/80 p-6 hover:-translate-y-1 transition-transform"
-              >
-                <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-cream to-blush flex items-center justify-center text-bronze text-xl">
-                  {s.icon}
-                </div>
-                <div className="mt-5 font-display text-lg text-espresso leading-tight">
-                  {s.title}
-                </div>
-                <div className="mt-3 text-sm text-cocoa/80 leading-relaxed">
-                  {s.desc}
-                </div>
-              </motion.div>
-            ))}
+          <div className="mt-16 grid lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-4 flex justify-center">
+              <div className="w-full max-w-[260px]">
+                <VideoCard
+                  src="/dermanuecosmetics/assets/pinvideosaver_x5lanip9.mp4"
+                  category="OUR PROCESS"
+                  tagline="Selected with care."
+                />
+              </div>
+            </div>
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {selectionCriteria.map((s, i) => (
+                <motion.div
+                  key={s.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ delay: i * 0.08, duration: 0.7 }}
+                  className="relative rounded-3xl border border-champagne/40 bg-softwhite/80 p-6 hover:-translate-y-1 transition-transform"
+                >
+                  <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-cream to-blush flex items-center justify-center text-bronze text-xl">
+                    {s.icon}
+                  </div>
+                  <div className="mt-5 font-display text-lg text-espresso leading-tight">
+                    {s.title}
+                  </div>
+                  <div className="mt-3 text-sm text-cocoa/80 leading-relaxed">
+                    {s.desc}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

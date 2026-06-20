@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import PageHero from "../components/PageHero.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
 import Button from "../components/Button.jsx";
+import VideoCard from "../components/VideoCard.jsx";
 
 const values = [
   { name: "Authenticity", desc: "Every brand we present is verified at its source." },
@@ -35,7 +36,7 @@ export default function About() {
             whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-5"
+            className="lg:col-span-5 relative"
           >
             <div className="relative rounded-[36px] overflow-hidden border border-champagne/40">
               <div className="aspect-[4/5] gradient-cream relative">
@@ -59,6 +60,15 @@ export default function About() {
                   </div>
                 </div>
               </div>
+            </div>
+            {/* Floating UGC ad accent — overlaps the brand image */}
+            <div className="hidden md:block absolute -right-6 -bottom-6 w-32 lg:w-40">
+              <VideoCard
+                src="/dermanuecosmetics/assets/pinvideosaver_6d3jf5bm.mp4"
+                category="OUR STORY"
+                tagline="A house of care."
+                showAd={false}
+              />
             </div>
           </motion.div>
           <motion.div
@@ -287,45 +297,56 @@ export default function About() {
 
       {/* FOUNDER MESSAGE */}
       <section className="py-24 sm:py-32 relative">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             variants={fade}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.9 }}
-            className="relative rounded-[40px] border border-champagne/50 bg-softwhite/80 backdrop-blur-md p-10 sm:p-14 overflow-hidden"
+            className="relative rounded-[40px] border border-champagne/50 bg-softwhite/80 backdrop-blur-md p-8 sm:p-12 overflow-hidden grid lg:grid-cols-12 gap-8 items-center"
           >
             <div
               aria-hidden
               className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-blush/50 blur-3xl"
             />
-            <div className="text-[11px] tracking-luxe text-bronze mb-6">
-              A MESSAGE FROM DERMANUE
-            </div>
-            <p className="font-display text-2xl sm:text-3xl text-espresso leading-snug">
-              “We built DERMANUE because beauty should never feel uncertain.
-              Every product we present is chosen with intention — to support
-              real people, real skin, and real confidence.”
-            </p>
-            <div className="mt-8 flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full gradient-bronze flex items-center justify-center text-softwhite font-display text-xl">
-                D
+            <div className="lg:col-span-7 relative">
+              <div className="text-[11px] tracking-luxe text-bronze mb-6">
+                A MESSAGE FROM DERMANUE
               </div>
-              <div>
-                <div className="font-display text-espresso text-lg">
-                  The DERMANUE Team
+              <p className="font-display text-2xl sm:text-3xl text-espresso leading-snug">
+                “We built DERMANUE because beauty should never feel uncertain.
+                Every product we present is chosen with intention — to support
+                real people, real skin, and real confidence.”
+              </p>
+              <div className="mt-8 flex items-center gap-4">
+                <div className="w-14 h-14 rounded-full gradient-bronze flex items-center justify-center text-softwhite font-display text-xl">
+                  D
                 </div>
-                <div className="text-[11px] tracking-luxe text-bronze">
-                  COSMETICS LIMITED
+                <div>
+                  <div className="font-display text-espresso text-lg">
+                    The DERMANUE Team
+                  </div>
+                  <div className="text-[11px] tracking-luxe text-bronze">
+                    COSMETICS LIMITED
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="mt-10">
-              <Button to="/contact" variant="primary" icon="→">
-                Get in Touch
-              </Button>
+              <div className="mt-10">
+                <Button to="/contact" variant="primary" icon="→">
+                  Get in Touch
+                </Button>
+              </div>
+            </div>
+            <div className="lg:col-span-5 relative">
+              <VideoCard
+                src="/dermanuecosmetics/assets/pinvideosaver_nosu2hpw.mp4"
+                category="FROM OUR TEAM"
+                tagline="Care, in motion."
+                showAd={false}
+                className="max-w-[280px] mx-auto"
+              />
             </div>
           </motion.div>
         </div>

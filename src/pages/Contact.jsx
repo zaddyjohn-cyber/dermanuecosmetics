@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageHero from "../components/PageHero.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
 import Button from "../components/Button.jsx";
+import VideoCard from "../components/VideoCard.jsx";
 
 const interests = [
   "Skincare Product Inquiry",
@@ -262,6 +263,16 @@ export default function Contact() {
                 Inquiries received outside business hours are answered the next
                 working day.
               </div>
+            </div>
+
+            {/* UGC ad accent — final visual reassurance */}
+            <div className="mt-6">
+              <VideoCard
+                src="/dermanuecosmetics/assets/pinvideosaver_u6n0cnhh.mp4"
+                category="JOIN DERMANUE"
+                tagline="Begin your beauty journey."
+                aspect="aspect-[4/5]"
+              />
             </div>
           </motion.div>
         </div>

@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../components/Button.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
+import VideoCard from "../components/VideoCard.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -378,6 +379,53 @@ export default function Home() {
                 </p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DERMANUE MOMENTS — UGC video strip, each branded as DERMANUE ad */}
+      <section className="py-24 sm:py-32 bg-cream-2/60 relative overflow-hidden">
+        <div
+          aria-hidden
+          className="absolute -top-32 -right-20 w-[460px] h-[460px] rounded-full bg-blush/40 blur-3xl"
+        />
+        <div className="max-w-7xl mx-auto px-6">
+          <SectionHeader
+            eyebrow="DERMANUE MOMENTS"
+            title="Real care. Real beauty. Real moments."
+            description="Quiet snapshots from the DERMANUE world — the products, the rituals, the people we serve."
+          />
+          <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+            <VideoCard
+              src="/dermanuecosmetics/assets/pinvideosaver_xaxh2seo.mp4"
+              category="DAILY RITUAL"
+              tagline="Soft skin, soft mornings."
+              index={0}
+            />
+            <VideoCard
+              src="/dermanuecosmetics/assets/pinvideosaver_aad9tz0b.mp4"
+              category="HYDRATION EDIT"
+              tagline="Drink it in."
+              index={1}
+            />
+            <VideoCard
+              src="/dermanuecosmetics/assets/pinvideosaver_ugnihg81.mp4"
+              category="GLOW SERIES"
+              tagline="Quiet luxury, lit from within."
+              index={2}
+            />
+            <VideoCard
+              src="/dermanuecosmetics/assets/pinvideosaver_d8435eu9.mp4"
+              category="SCIENCE BACKED"
+              tagline="Formulated with care."
+              index={3}
+            />
+            <VideoCard
+              src="/dermanuecosmetics/assets/pinvideosaver_aa0eo74d.mp4"
+              category="CLEAN BEAUTY"
+              tagline="Made with intention."
+              index={4}
+            />
           </div>
         </div>
       </section>
