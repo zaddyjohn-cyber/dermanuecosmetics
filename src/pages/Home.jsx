@@ -403,6 +403,85 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          {/* OUR COMMITMENT, AMPLIFIED — sub-section extending the science-backed standards */}
+          <div className="mt-20 sm:mt-24">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="text-center mb-12"
+            >
+              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl text-espresso leading-tight tracking-wide">
+                OUR COMMITMENT, AMPLIFIED
+              </h3>
+              <div className="mt-2 text-[11px] sm:text-xs tracking-[0.36em] text-bronze">
+                THE WORK BEHIND THE STANDARDS
+              </div>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {[
+                {
+                  image: "/dermanuecosmetics/assets/commit-ingredient.jpg",
+                  title: "EVERY INGREDIENT TRACED.",
+                  desc: "For complete provenance and purity.",
+                },
+                {
+                  image: "/dermanuecosmetics/assets/commit-formulas.jpg",
+                  title: "VALIDATED FORMULAS.",
+                  desc: "Our research ensures safety and efficacy.",
+                },
+                {
+                  image: "/dermanuecosmetics/assets/commit-curated.jpg",
+                  title: "CURATED FOR YOU.",
+                  desc: "Products made to support the specific needs of diverse skin types.",
+                },
+                {
+                  image: "/dermanuecosmetics/assets/commit-standards.jpg",
+                  title: "EXCEEDING GLOBAL STANDARDS.",
+                  desc: "Every batch is rigorously tested for safety.",
+                },
+              ].map((c, i) => (
+                <motion.article
+                  key={c.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ delay: i * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  className="group relative rounded-3xl overflow-hidden border border-champagne/40 bg-softwhite/70 backdrop-blur-md hover:-translate-y-1 hover:shadow-[0_28px_60px_-30px_rgba(91,58,46,0.35)] transition-all duration-500"
+                >
+                  <div className="aspect-[4/3] relative overflow-hidden">
+                    <img
+                      src={c.image}
+                      alt={c.title}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div
+                      aria-hidden
+                      className="absolute inset-0 bg-gradient-to-t from-cocoa/25 via-transparent to-transparent pointer-events-none"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h4 className="font-display text-base sm:text-lg text-espresso leading-tight tracking-wide">
+                      {c.title}
+                    </h4>
+                    <p className="mt-2 text-sm text-cocoa/80 leading-relaxed">
+                      {c.desc}
+                    </p>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <Button to="/about" variant="primary" icon="→">
+                Learn More About Our Process
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
