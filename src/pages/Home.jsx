@@ -193,17 +193,21 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Four product cards orbiting in a circle */}
+              {/* Eight product cards orbiting in a circle (45° spacing) */}
               {[
                 "/dermanuecosmetics/assets/product-1.jpg",
                 "/dermanuecosmetics/assets/product-2.jpg",
                 "/dermanuecosmetics/assets/product-3.jpg",
                 "/dermanuecosmetics/assets/product-4.jpg",
+                "/dermanuecosmetics/assets/product-5.jpg",
+                "/dermanuecosmetics/assets/product-6.jpg",
+                "/dermanuecosmetics/assets/product-7.jpg",
+                "/dermanuecosmetics/assets/product-8.jpg",
               ].map((src, i) => (
                 <div
                   key={src}
-                  className="orbit-card absolute top-1/2 left-1/2 w-[110px] h-[140px] sm:w-[130px] sm:h-[170px] lg:w-[150px] lg:h-[195px] rounded-2xl overflow-hidden ring-1 ring-softwhite/40 shadow-[0_24px_50px_-25px_rgba(91,58,46,0.55)] hover:scale-[1.04] hover:z-10 transition-transform duration-500"
-                  style={{ animationDelay: `${-(i * 7)}s` }}
+                  className="orbit-card absolute top-1/2 left-1/2 w-[88px] h-[112px] sm:w-[108px] sm:h-[138px] lg:w-[125px] lg:h-[160px] rounded-2xl overflow-hidden ring-1 ring-softwhite/40 shadow-[0_24px_50px_-25px_rgba(91,58,46,0.55)] hover:scale-[1.06] hover:z-10 transition-transform duration-500"
+                  style={{ animationDelay: `${-(i * 3.5)}s` }}
                 >
                   <img
                     src={src}
