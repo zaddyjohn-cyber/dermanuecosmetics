@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,6 +8,73 @@ import SectionHeader from "../components/SectionHeader.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const heroImages = [
+  "/dermanuecosmetics/assets/product-1.jpg",
+  "/dermanuecosmetics/assets/product-2.jpg",
+  "/dermanuecosmetics/assets/product-3.jpg",
+  "/dermanuecosmetics/assets/product-4.jpg",
+  "/dermanuecosmetics/assets/product-5.jpg",
+  "/dermanuecosmetics/assets/product-6.jpg",
+  "/dermanuecosmetics/assets/product-7.jpg",
+  "/dermanuecosmetics/assets/product-8.jpg",
+  "/dermanuecosmetics/assets/product-9.jpg",
+  "/dermanuecosmetics/assets/product-10.jpg",
+];
+
+function RotatingImage({
+  startIndex = 0,
+  intervalMs = 3500,
+  delayMs = 0,
+  className = "",
+  rotate = 0,
+}) {
+  const [idx, setIdx] = useState(startIndex % heroImages.length);
+  useEffect(() => {
+    let timerId;
+    const timeoutId = setTimeout(() => {
+      timerId = setInterval(
+        () => setIdx((i) => (i + 1) % heroImages.length),
+        intervalMs
+      );
+    }, delayMs);
+    return () => {
+      clearTimeout(timeoutId);
+      if (timerId) clearInterval(timerId);
+    };
+  }, [intervalMs, delayMs]);
+
+  return (
+    <div
+      className={`absolute rounded-2xl overflow-hidden shadow-[0_30px_50px_-20px_rgba(91,58,46,0.7)] ring-1 ring-softwhite/40 ${className}`}
+      style={{ transform: `rotate(${rotate}deg)` }}
+    >
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={heroImages[idx]}
+          src={heroImages[idx]}
+          alt="DERMANUE skincare"
+          initial={{ opacity: 0, scale: 1.08 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.96 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </AnimatePresence>
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-t from-cocoa/55 via-transparent to-transparent pointer-events-none"
+      />
+      <div className="absolute bottom-1.5 inset-x-1.5">
+        <div className="rounded-lg bg-cocoa/70 backdrop-blur-sm py-1 text-center">
+          <div className="text-[8px] tracking-[0.36em] text-softwhite leading-none">
+            DERMANUE
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const trustPoints = [
   { label: "Authentic Products", icon: "◇" },
@@ -195,7 +262,7 @@ export default function Home() {
 
           <div className="lg:col-span-6 order-1 lg:order-2 relative">
             <div className="relative h-[420px] sm:h-[520px] lg:h-[640px]">
-              {/* Main hero video (background, autoplaying) */}
+              {/* Hero video — background, autoplaying */}
               <div className="absolute inset-0 rounded-[40px] border border-champagne/40 overflow-hidden shadow-[0_40px_80px_-40px_rgba(91,58,46,0.5)]">
                 <video
                   src="/dermanuecosmetics/assets/hero-video.mp4"
@@ -209,158 +276,61 @@ export default function Home() {
                 />
                 <div
                   aria-hidden
-                  className="absolute inset-0 bg-gradient-to-tr from-cream/25 via-transparent to-blush/20"
+                  className="absolute inset-0 bg-gradient-to-tr from-cream/20 via-transparent to-blush/15"
                 />
                 <div
                   aria-hidden
-                  className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-cocoa/55 via-cocoa/15 to-transparent"
+                  className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-cocoa/45 to-transparent"
                 />
                 <div
                   aria-hidden
                   className="absolute inset-0 ring-1 ring-inset ring-softwhite/30 rounded-[40px]"
                 />
-
-                {/* Skincare product images shown OVER the rolling video */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30, rotate: -6 }}
-                  animate={{ opacity: 1, y: 0, rotate: -6 }}
-                  transition={{ delay: 0.6, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute top-20 left-6 sm:left-10 w-24 h-32 sm:w-28 sm:h-36 rounded-2xl overflow-hidden shadow-[0_30px_50px_-20px_rgba(91,58,46,0.7)] ring-1 ring-softwhite/40 float-slow"
-                >
-                  <img
-                    src="/dermanuecosmetics/assets/product-6.jpg"
-                    alt="Featured skincare"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: -30, rotate: 8 }}
-                  animate={{ opacity: 1, y: 0, rotate: 8 }}
-                  transition={{ delay: 0.85, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute top-1/2 -translate-y-1/2 right-6 sm:right-12 w-24 h-32 sm:w-28 sm:h-36 rounded-2xl overflow-hidden shadow-[0_30px_50px_-20px_rgba(91,58,46,0.7)] ring-1 ring-softwhite/40"
-                  style={{ animationDelay: "0.4s" }}
-                >
-                  <img
-                    src="/dermanuecosmetics/assets/product-7.jpg"
-                    alt="Featured skincare"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 30, rotate: -3 }}
-                  animate={{ opacity: 1, y: 0, rotate: -3 }}
-                  transition={{ delay: 1.1, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute bottom-24 left-1/2 -translate-x-1/2 w-24 h-32 sm:w-28 sm:h-36 rounded-2xl overflow-hidden shadow-[0_30px_50px_-20px_rgba(91,58,46,0.7)] ring-1 ring-softwhite/40 float-slow"
-                  style={{ animationDelay: "0.8s" }}
-                >
-                  <img
-                    src="/dermanuecosmetics/assets/product-8.jpg"
-                    alt="Featured skincare"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </motion.div>
-
-                {/* Top chips */}
-                <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
-                  <div className="glass-card rounded-full px-3.5 py-1.5 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-bronze animate-pulse" />
-                    <span className="text-[9px] tracking-luxe text-cocoa">
-                      AUTHENTIC SKINCARE
-                    </span>
-                  </div>
-                  <div className="glass-card rounded-full px-3.5 py-1.5 text-[9px] tracking-luxe text-cocoa">
-                    SCIENCE-BACKED
-                  </div>
-                </div>
-
-                {/* Bottom skincare ritual card */}
-                <div className="absolute bottom-5 left-5 right-5 glass-card rounded-2xl p-4 flex items-center justify-between gap-3">
-                  <div>
-                    <div className="text-[9px] tracking-luxe text-bronze">
-                      DAILY SKINCARE RITUAL
-                    </div>
-                    <div className="font-display text-softwhite text-base sm:text-lg leading-tight text-shadow-soft">
-                      Trusted care, refined.
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    {["#cfa18f", "#c7a896", "#a87561"].map((c) => (
-                      <span
-                        key={c}
-                        className="w-2 h-2 rounded-full"
-                        style={{ background: c }}
-                      />
-                    ))}
-                  </div>
-                </div>
               </div>
 
-              {/* Floating skincare product cards */}
-              <motion.div
-                initial={{ opacity: 0, x: 30, y: 10 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ delay: 1.1, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className="hidden md:flex absolute -left-10 top-16 glass-card rounded-2xl p-3 shadow-[0_24px_40px_-20px_rgba(91,58,46,0.55)] gap-3 items-center float-slow"
-              >
-                <img
-                  src="/dermanuecosmetics/assets/product-1.jpg"
-                  alt="Hydrating serum"
-                  className="w-16 h-20 object-cover rounded-xl"
-                  loading="lazy"
-                />
-                <div className="pr-2">
-                  <div className="text-[9px] tracking-luxe text-bronze">SERUM</div>
-                  <div className="font-display text-espresso text-base leading-tight">
-                    Radiance Renewal
-                  </div>
-                  <div className="mt-1 text-[10px] text-cocoa/70">
-                    For glowing skin
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -30, y: 10 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ delay: 1.3, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className="hidden md:flex absolute -right-10 bottom-28 glass-card rounded-2xl p-3 shadow-[0_24px_40px_-20px_rgba(91,58,46,0.55)] gap-3 items-center"
-              >
-                <img
-                  src="/dermanuecosmetics/assets/product-2.jpg"
-                  alt="Hydrating moisturizer"
-                  className="w-16 h-20 object-cover rounded-xl"
-                  loading="lazy"
-                />
-                <div className="pr-2">
-                  <div className="text-[9px] tracking-luxe text-bronze">MOISTURIZER</div>
-                  <div className="font-display text-espresso text-base leading-tight">
-                    Hydra-Calm
-                  </div>
-                  <div className="mt-1 text-[10px] text-cocoa/70">
-                    Soft, balanced skin
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Floating accent badge — product 3 thumbnail */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.5, duration: 0.8 }}
-                className="hidden lg:flex absolute -right-6 top-6 glass-card rounded-full p-1.5 shadow-[0_18px_30px_-15px_rgba(91,58,46,0.5)] items-center gap-2 pr-3"
-              >
-                <img
-                  src="/dermanuecosmetics/assets/product-3.jpg"
-                  alt="Gentle cleanser"
-                  className="w-10 h-10 object-cover rounded-full"
-                  loading="lazy"
-                />
-                <div className="text-[9px] tracking-luxe text-cocoa">
-                  NEW ARRIVAL
-                </div>
-              </motion.div>
+              {/* Rotating skincare images layered OVER the video — every card is just an image + DERMANUE branding */}
+              <RotatingImage
+                startIndex={0}
+                intervalMs={3200}
+                delayMs={400}
+                rotate={-7}
+                className="w-24 h-32 sm:w-28 sm:h-36 top-10 left-4 sm:left-8 float-slow"
+              />
+              <RotatingImage
+                startIndex={2}
+                intervalMs={3600}
+                delayMs={900}
+                rotate={6}
+                className="w-24 h-32 sm:w-28 sm:h-36 top-6 right-6 sm:right-10"
+              />
+              <RotatingImage
+                startIndex={4}
+                intervalMs={3400}
+                delayMs={1400}
+                rotate={4}
+                className="w-20 h-28 sm:w-24 sm:h-32 top-1/2 -translate-y-1/2 right-2 sm:right-4"
+              />
+              <RotatingImage
+                startIndex={6}
+                intervalMs={3800}
+                delayMs={1900}
+                rotate={-4}
+                className="w-24 h-32 sm:w-28 sm:h-36 bottom-6 left-6 sm:left-12 float-slow"
+              />
+              <RotatingImage
+                startIndex={8}
+                intervalMs={3300}
+                delayMs={2400}
+                rotate={8}
+                className="w-28 h-36 sm:w-32 sm:h-40 bottom-10 right-6 sm:right-12"
+              />
+              <RotatingImage
+                startIndex={1}
+                intervalMs={4000}
+                delayMs={2900}
+                rotate={-3}
+                className="hidden lg:block w-20 h-28 top-1/2 -translate-y-1/2 left-2"
+              />
             </div>
           </div>
         </div>
