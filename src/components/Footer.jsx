@@ -49,13 +49,13 @@ export default function Footer() {
               </div>
             </Link>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-cocoa/80">
-              Connecting consumers with authentic, trusted, and science-backed
-              skincare and cosmetic brands. Premium beauty made accessible
-              across Nigeria and beyond.
+              A trusted beauty and cosmetics company connecting customers with
+              authentic global skincare and cosmetic brands — science-backed,
+              quality-led, and curated with care.
             </p>
             <div className="mt-6 inline-flex items-center gap-3 text-[10px] tracking-luxe text-bronze">
               <span className="line-divider" />
-              AUTHENTIC · SCIENCE-BACKED · EFFECTIVE
+              100% AUTHENTIC SOURCING · SCIENCE-BACKED · TRUSTED
             </div>
           </div>
 

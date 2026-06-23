@@ -87,11 +87,11 @@ export default function About() {
               Premium beauty, made accessible with care.
             </h2>
             <p className="mt-6 text-cocoa/85 text-lg leading-relaxed">
-              DERMANUE Cosmetics Limited exists to make authentic, trusted, and
-              premium beauty products more accessible. We work closely with
-              science-backed skincare and cosmetic brands — focusing on
-              quality, customer education, and the long-term satisfaction of
-              every person we serve.
+              DERMANUE Cosmetics Limited is a trusted beauty and cosmetics
+              company connecting customers with authentic global skincare and
+              cosmetic brands. Built on <span className="font-medium text-bronze">100% Authentic Sourcing</span>,
+              science-backed selection, and the long-term care of every person
+              we serve.
             </p>
             <p className="mt-5 text-cocoa/80 leading-relaxed">
               From everyday essentials to refined treatment formulas, our
@@ -101,7 +101,7 @@ export default function About() {
             <div className="mt-8 grid grid-cols-3 gap-4">
               {[
                 { v: "100%", l: "AUTHENTIC SOURCING" },
-                { v: "+30", l: "TRUSTED BRANDS" },
+                { v: "Global", l: "TRUSTED PARTNERSHIPS" },
                 { v: "1:1", l: "CUSTOMER CARE" },
               ].map((s) => (
                 <div

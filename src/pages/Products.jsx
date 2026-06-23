@@ -43,14 +43,6 @@ const products = [
     image: "/dermanuecosmetics/assets/product-7.jpg",
   },
   {
-    name: "Pure Glow Essence",
-    category: "Facial Care",
-    benefit: "A featherlight essence that supports a healthy glow.",
-    accent: "from-cream to-rose-beige",
-    symbol: "✿",
-    image: "/dermanuecosmetics/assets/product-8.jpg",
-  },
-  {
     name: "Velvet Hydration Veil",
     category: "Moisturizers",
     benefit: "A weightless veil that softens and balances comfortable skin.",

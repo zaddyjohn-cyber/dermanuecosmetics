@@ -10,7 +10,7 @@ import VideoCard from "../components/VideoCard.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 const trustPoints = [
-  { label: "Authentic Products", icon: "◇" },
+  { label: "100% Authentic Sourcing", icon: "◇" },
   { label: "Science-Backed Brands", icon: "✺" },
   { label: "Customer Education", icon: "❋" },
   { label: "Trusted Beauty Care", icon: "✦" },
@@ -133,8 +133,9 @@ export default function Home() {
               <span className="hero-word inline-block">Care.</span>
             </h1>
             <p className="mt-7 max-w-xl text-base md:text-lg text-cocoa/85 leading-relaxed">
-              Connecting consumers with authentic, trusted, and science-backed
-              skincare and cosmetic brands across Nigeria and beyond.
+              A trusted beauty and cosmetics company connecting customers with
+              authentic global skincare and cosmetic brands — science-backed,
+              quality-led, and curated with care.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
@@ -146,7 +147,15 @@ export default function Home() {
               </Button>
             </div>
 
-            <div className="mt-12 flex items-center gap-6">
+            <div className="mt-8 inline-flex items-center gap-3 rounded-full bg-softwhite/70 backdrop-blur-sm border border-champagne/50 pl-3 pr-5 py-2">
+              <span className="w-7 h-7 rounded-full gradient-bronze flex items-center justify-center text-softwhite text-[10px] font-display">✦</span>
+              <div className="leading-tight">
+                <div className="text-[9px] tracking-[0.32em] text-bronze">100% AUTHENTIC SOURCING</div>
+                <div className="text-[11px] text-cocoa/75">Verified global brand partnerships</div>
+              </div>
+            </div>
+
+            <div className="mt-8 flex items-center gap-6">
               <div className="flex -space-x-2">
                 {["#c7a896", "#cfa18f", "#e5ccbd", "#a87561"].map((c) => (
                   <span
@@ -161,7 +170,7 @@ export default function Home() {
                   TRUSTED BY DISCERNING CUSTOMERS
                 </div>
                 <div className="text-sm text-cocoa/80">
-                  Curated beauty across Nigeria & beyond
+                  Global skincare & cosmetics, curated for you
                 </div>
               </div>
             </div>
@@ -193,21 +202,23 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Eight product cards orbiting in a circle (45° spacing) */}
-              {[
-                "/dermanuecosmetics/assets/product-1.jpg",
-                "/dermanuecosmetics/assets/product-2.jpg",
-                "/dermanuecosmetics/assets/product-3.jpg",
-                "/dermanuecosmetics/assets/product-4.jpg",
-                "/dermanuecosmetics/assets/product-5.jpg",
-                "/dermanuecosmetics/assets/product-6.jpg",
-                "/dermanuecosmetics/assets/product-7.jpg",
-                "/dermanuecosmetics/assets/product-8.jpg",
-              ].map((src, i) => (
+              {/* Seven product cards orbiting (skincare/cosmetics only) */}
+              {(() => {
+                const orbit = [
+                  "/dermanuecosmetics/assets/product-1.jpg",
+                  "/dermanuecosmetics/assets/product-2.jpg",
+                  "/dermanuecosmetics/assets/product-3.jpg",
+                  "/dermanuecosmetics/assets/product-4.jpg",
+                  "/dermanuecosmetics/assets/product-5.jpg",
+                  "/dermanuecosmetics/assets/product-6.jpg",
+                  "/dermanuecosmetics/assets/product-7.jpg",
+                ];
+                const step = 28 / orbit.length;
+                return orbit.map((src, i) => (
                 <div
                   key={src}
                   className="orbit-card absolute top-1/2 left-1/2 w-[88px] h-[112px] sm:w-[108px] sm:h-[138px] lg:w-[125px] lg:h-[160px] rounded-2xl overflow-hidden ring-1 ring-softwhite/40 shadow-[0_24px_50px_-25px_rgba(91,58,46,0.55)] hover:scale-[1.06] hover:z-10 transition-transform duration-500"
-                  style={{ animationDelay: `${-(i * 3.5)}s` }}
+                  style={{ animationDelay: `${-(i * step)}s` }}
                 >
                   <img
                     src={src}
@@ -226,7 +237,8 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              ))}
+                ));
+              })()}
             </div>
           </div>
         </div>
@@ -578,10 +590,10 @@ export default function Home() {
           <div className="lg:col-span-6">
             <div className="relative grid grid-cols-2 gap-4">
               {[
-                { t: "Authentic", s: "Verified sourcing" },
-                { t: "Clinical", s: "Science-backed formulas" },
-                { t: "Educated", s: "Informed choices" },
-                { t: "Curated", s: "Premium selection" },
+                { t: "Authentic", s: "Verified sourcing", video: "/dermanuecosmetics/assets/Authentic.mp4" },
+                { t: "Clinical", s: "Science-backed formulas", video: "/dermanuecosmetics/assets/clinical.mp4" },
+                { t: "Educated", s: "Informed choices", video: "/dermanuecosmetics/assets/Educated.mp4" },
+                { t: "Curated", s: "Premium selection", video: "/dermanuecosmetics/assets/Curated.mp4" },
               ].map((c, i) => (
                 <motion.div
                   key={c.t}
@@ -589,17 +601,27 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08, duration: 0.7 }}
-                  className={`rounded-3xl border border-champagne/40 p-6 ${
-                    i % 2 === 0 ? "bg-softwhite/80" : "bg-rose-beige/60"
-                  }`}
+                  className="relative rounded-3xl border border-champagne/40 overflow-hidden aspect-[4/5] group"
                 >
-                  <div className="text-[10px] tracking-luxe text-bronze">
-                    0{i + 1}
+                  <video
+                    src={c.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 bg-gradient-to-t from-cocoa/80 via-cocoa/25 to-cocoa/15 pointer-events-none"
+                  />
+                  <div className="absolute inset-0 p-5 flex flex-col justify-end text-softwhite">
+                    <div className="font-display text-2xl sm:text-3xl leading-tight">
+                      {c.t}
+                    </div>
+                    <div className="mt-1 text-sm text-softwhite/85">{c.s}</div>
                   </div>
-                  <div className="mt-3 font-display text-2xl text-espresso">
-                    {c.t}
-                  </div>
-                  <div className="mt-1 text-sm text-cocoa/80">{c.s}</div>
                 </motion.div>
               ))}
             </div>
