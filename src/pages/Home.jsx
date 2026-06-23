@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../components/Button.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
 import VideoCard from "../components/VideoCard.jsx";
+import BrandPartners from "../components/BrandPartners.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -264,6 +265,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* BRAND PARTNERS — trusted global houses */}
+      <BrandPartners />
 
       {/* CATEGORIES */}
       <section className="py-24 sm:py-32 relative">

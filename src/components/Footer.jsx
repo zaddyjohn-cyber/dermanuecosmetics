@@ -106,12 +106,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 pt-6 border-t border-champagne/40 flex flex-col md:flex-row gap-3 items-center justify-between">
-          <div className="text-[11px] tracking-widest text-cocoa/70">
+        <div className="mt-14 pt-6 border-t border-champagne/40 flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div className="text-[11px] tracking-widest text-cocoa/70 text-center md:text-left">
             © {new Date().getFullYear()} DERMANUE COSMETICS LIMITED. All rights reserved.
           </div>
-          <div className="text-[10px] tracking-luxe text-bronze">
-            AUTHENTIC BEAUTY · TRUSTED CARE
+          <div className="flex items-center gap-5 text-[10px] tracking-luxe">
+            <Link to="/privacy" className="text-cocoa/70 hover:text-bronze transition-colors">
+              PRIVACY
+            </Link>
+            <Link to="/terms" className="text-cocoa/70 hover:text-bronze transition-colors">
+              TERMS
+            </Link>
+            <span className="text-bronze">AUTHENTIC BEAUTY · TRUSTED CARE</span>
           </div>
         </div>
       </div>

@@ -40,6 +40,13 @@ const faqs = [
   },
 ];
 
+// To make the form actually send inquiries to your inbox:
+//   1) Go to https://formspree.io and sign up (free tier is fine)
+//   2) Create a new form, copy the endpoint (looks like https://formspree.io/f/abcd1234)
+//   3) Replace YOUR_FORM_ID below with the real ID
+// Until then, submissions fall back to opening the user's email client with a prefilled message.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
 export default function Contact() {
   const [form, setForm] = useState({
     name: "",
@@ -49,6 +56,8 @@ export default function Contact() {
     message: "",
   });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const [openFaq, setOpenFaq] = useState(0);
 
   const handle = (e) => {
@@ -56,11 +65,42 @@ export default function Contact() {
     setForm((f) => ({ ...f, [name]: value }));
   };
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 4500);
-    setForm({ name: "", email: "", phone: "", interest: "", message: "" });
+    setError("");
+
+    // Graceful fallback if Formspree isn't configured yet
+    if (FORMSPREE_ENDPOINT.includes("YOUR_FORM_ID")) {
+      const subject = `DERMANUE inquiry — ${form.interest || "General"}`;
+      const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nInterest: ${form.interest}\n\nMessage:\n${form.message}`;
+      window.location.href = `mailto:hello@dermanue.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      setSent(true);
+      setTimeout(() => setSent(false), 4500);
+      return;
+    }
+
+    setSending(true);
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setSent(true);
+        setForm({ name: "", email: "", phone: "", interest: "", message: "" });
+        setTimeout(() => setSent(false), 5500);
+      } else {
+        setError("Something went wrong sending your message. Please email hello@dermanue.com directly.");
+      }
+    } catch {
+      setError("Network error. Please try again or email hello@dermanue.com.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const inputCls =
@@ -180,8 +220,8 @@ export default function Contact() {
                     By submitting, you agree to DERMANUE's privacy & care
                     standards. We treat every message with confidentiality.
                   </p>
-                  <Button type="submit" variant="primary" icon="→">
-                    Send Inquiry
+                  <Button type="submit" variant="primary" icon={sending ? "" : "→"}>
+                    {sending ? "Sending…" : "Send Inquiry"}
                   </Button>
                 </div>
               </form>
@@ -196,6 +236,16 @@ export default function Contact() {
                   >
                     Thank you — your inquiry has been received. Our team will
                     be in touch shortly.
+                  </motion.div>
+                )}
+                {error && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    className="mt-6 rounded-2xl border border-red-300/60 bg-red-50/70 p-4 text-sm text-red-900"
+                  >
+                    {error}
                   </motion.div>
                 )}
               </AnimatePresence>
