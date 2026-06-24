@@ -152,7 +152,7 @@ export default function Home() {
               <span className="w-7 h-7 rounded-full gradient-bronze flex items-center justify-center text-softwhite text-[10px] font-display">✦</span>
               <div className="leading-tight">
                 <div className="text-[9px] tracking-[0.32em] text-bronze">100% AUTHENTIC SOURCING</div>
-                <div className="text-[11px] text-cocoa/75">Verified global brand partnerships</div>
+                <div className="text-[11px] text-cocoa/75">Focused on authentic sourcing</div>
               </div>
             </div>
 
@@ -168,7 +168,7 @@ export default function Home() {
               </div>
               <div>
                 <div className="text-[10px] tracking-luxe text-bronze">
-                  TRUSTED BY DISCERNING CUSTOMERS
+                  CURATING TRUSTED GLOBAL BEAUTY BRANDS
                 </div>
                 <div className="text-sm text-cocoa/80">
                   Global skincare & cosmetics, curated for you
@@ -441,7 +441,7 @@ export default function Home() {
               {[
                 {
                   image: "/dermanuecosmetics/assets/commit-ingredient.jpg",
-                  title: "EVERY INGREDIENT TRACED.",
+                  title: "TRANSPARENT BRANDS. INFORMED CHOICES.",
                   desc: "For complete provenance and purity.",
                 },
                 {
@@ -457,7 +457,7 @@ export default function Home() {
                 {
                   image: "/dermanuecosmetics/assets/commit-standards.jpg",
                   title: "EXCEEDING GLOBAL STANDARDS.",
-                  desc: "Every batch is rigorously tested for safety.",
+                  desc: "We prioritise brands that meet recognised quality and safety standards.",
                 },
               ].map((c, i) => (
                 <motion.article
