@@ -441,23 +441,23 @@ export default function Home() {
               {[
                 {
                   image: "/dermanuecosmetics/assets/commit-ingredient.jpg",
-                  title: "TRANSPARENT BRANDS. INFORMED CHOICES.",
-                  desc: "For complete provenance and purity.",
+                  title: "CAREFULLY SELECTED BRANDS.",
+                  desc: "Thoughtfully chosen houses with proven authenticity and provenance.",
                 },
                 {
                   image: "/dermanuecosmetics/assets/commit-formulas.jpg",
-                  title: "VALIDATED FORMULAS.",
-                  desc: "Our research ensures safety and efficacy.",
+                  title: "TRUSTED GLOBAL PARTNERS.",
+                  desc: "Science-backed brands with established research and reputation.",
                 },
                 {
                   image: "/dermanuecosmetics/assets/commit-curated.jpg",
-                  title: "CURATED FOR YOU.",
-                  desc: "Products made to support the specific needs of diverse skin types.",
+                  title: "CURATED FOR YOUR NEEDS.",
+                  desc: "Selections that suit real skin across diverse types and concerns.",
                 },
                 {
                   image: "/dermanuecosmetics/assets/commit-standards.jpg",
-                  title: "EXCEEDING GLOBAL STANDARDS.",
-                  desc: "We prioritise brands that meet recognised quality and safety standards.",
+                  title: "BEAUTY CHOSEN WITH CARE.",
+                  desc: "Every brand we present is reviewed against clear quality standards.",
                 },
               ].map((c, i) => (
                 <motion.article

@@ -17,43 +17,45 @@ const categoryList = [
   { name: "Beauty Essentials", icon: "✿" },
 ];
 
+// Generic category labels (DERMANUE is a curator/retailer, not a manufacturer).
+// Replace with real partner-brand products once partnerships are confirmed.
 const products = [
   {
-    name: "Lumière Daily SPF",
-    category: "Sunscreen",
-    benefit: "Daily protection with a refined, weightless finish.",
+    name: "Premium Sunscreens",
+    category: "Sun Care",
+    benefit: "Daily, weightless protection from trusted global skincare houses.",
     accent: "from-cream to-champagne/60",
     symbol: "☀",
     image: "/dermanuecosmetics/assets/product-5.jpg",
   },
   {
-    name: "Silk Skin Body Lotion",
-    category: "Body Care",
-    benefit: "Soft, nourishing care for smooth, comfortable body skin.",
+    name: "Facial Cleansers",
+    category: "Cleansers & Toners",
+    benefit: "Gentle, refreshing cleansers carefully selected for daily routines.",
     accent: "from-rose-beige to-blush",
-    symbol: "✺",
+    symbol: "◇",
     image: "/dermanuecosmetics/assets/product-6.jpg",
   },
   {
-    name: "Satin Lip Veil",
+    name: "Beauty Essentials",
     category: "Cosmetics",
-    benefit: "A modern, soft-finish lip color for everyday wear.",
+    benefit: "A curated edit of clean, premium cosmetic essentials.",
     accent: "from-blush to-rose-beige",
     symbol: "◈",
     image: "/dermanuecosmetics/assets/product-7.jpg",
   },
   {
-    name: "Velvet Hydration Veil",
+    name: "Moisturizers",
     category: "Moisturizers",
-    benefit: "A weightless veil that softens and balances comfortable skin.",
+    benefit: "Lightweight, science-backed hydration from trusted partners.",
     accent: "from-rose-beige to-cream-2",
     symbol: "❋",
     image: "/dermanuecosmetics/assets/product-9.jpg",
   },
   {
-    name: "Radiance Recovery Treatment",
+    name: "Serums & Treatments",
     category: "Serums & Treatments",
-    benefit: "Supports a luminous, even-toned complexion with daily use.",
+    benefit: "Targeted formulas from established, science-led skincare brands.",
     accent: "from-cream to-blush",
     symbol: "✦",
     image: "/dermanuecosmetics/assets/product-10.jpg",
