@@ -46,7 +46,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
             <img
-              src="/dermanuecosmetics/assets/dermanue-logo.jpeg"
+              src="/assets/dermanue-logo.jpeg"
               alt="DERMANUE"
               className="h-11 w-11 rounded-full ring-1 ring-champagne/50 transition-transform duration-500 group-hover:rotate-[8deg]"
             />

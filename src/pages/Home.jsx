@@ -21,22 +21,22 @@ const categories = [
   {
     name: "Skincare",
     desc: "Targeted treatments that support healthier, balanced skin.",
-    image: "/dermanuecosmetics/assets/cat-skincare.jpg",
+    image: "/assets/cat-skincare.jpg",
   },
   {
     name: "Cosmetics",
     desc: "Refined essentials crafted by trusted beauty houses.",
-    image: "/dermanuecosmetics/assets/cat-cosmetics.jpg",
+    image: "/assets/cat-cosmetics.jpg",
   },
   {
     name: "Beauty Essentials",
     desc: "Everyday luxuries curated for clean, modern routines.",
-    image: "/dermanuecosmetics/assets/cat-beauty.jpg",
+    image: "/assets/cat-beauty.jpg",
   },
   {
     name: "Personal Care",
     desc: "Gentle, effective formulas for a complete care ritual.",
-    image: "/dermanuecosmetics/assets/cat-personal.jpg",
+    image: "/assets/cat-personal.jpg",
   },
 ];
 
@@ -206,13 +206,13 @@ export default function Home() {
               {/* Seven product cards orbiting (skincare/cosmetics only) */}
               {(() => {
                 const orbit = [
-                  "/dermanuecosmetics/assets/product-1.jpg",
-                  "/dermanuecosmetics/assets/product-2.jpg",
-                  "/dermanuecosmetics/assets/product-3.jpg",
-                  "/dermanuecosmetics/assets/product-4.jpg",
-                  "/dermanuecosmetics/assets/product-5.jpg",
-                  "/dermanuecosmetics/assets/product-6.jpg",
-                  "/dermanuecosmetics/assets/product-7.jpg",
+                  "/assets/product-1.jpg",
+                  "/assets/product-2.jpg",
+                  "/assets/product-3.jpg",
+                  "/assets/product-4.jpg",
+                  "/assets/product-5.jpg",
+                  "/assets/product-6.jpg",
+                  "/assets/product-7.jpg",
                 ];
                 const step = 28 / orbit.length;
                 return orbit.map((src, i) => (
@@ -332,7 +332,7 @@ export default function Home() {
             <div className="relative rounded-[36px] overflow-hidden border border-champagne/40">
               <div className="aspect-[4/5] relative">
                 <img
-                  src="/dermanuecosmetics/assets/lifestyle-1.png"
+                  src="/assets/lifestyle-1.png"
                   alt="DERMANUE skincare lifestyle"
                   className="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
@@ -440,22 +440,22 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
                 {
-                  image: "/dermanuecosmetics/assets/commit-ingredient.jpg",
+                  image: "/assets/commit-ingredient.jpg",
                   title: "CAREFULLY SELECTED BRANDS.",
                   desc: "Thoughtfully chosen houses with proven authenticity and provenance.",
                 },
                 {
-                  image: "/dermanuecosmetics/assets/commit-formulas.jpg",
+                  image: "/assets/commit-formulas.jpg",
                   title: "TRUSTED GLOBAL PARTNERS.",
                   desc: "Science-backed brands with established research and reputation.",
                 },
                 {
-                  image: "/dermanuecosmetics/assets/commit-curated.jpg",
+                  image: "/assets/commit-curated.jpg",
                   title: "CURATED FOR YOUR NEEDS.",
                   desc: "Selections that suit real skin across diverse types and concerns.",
                 },
                 {
-                  image: "/dermanuecosmetics/assets/commit-standards.jpg",
+                  image: "/assets/commit-standards.jpg",
                   title: "BEAUTY CHOSEN WITH CARE.",
                   desc: "Every brand we present is reviewed against clear quality standards.",
                 },
@@ -515,31 +515,31 @@ export default function Home() {
           />
           <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
             <VideoCard
-              src="/dermanuecosmetics/assets/pinvideosaver_xaxh2seo.mp4"
+              src="/assets/pinvideosaver_xaxh2seo.mp4"
               category="DAILY RITUAL"
               tagline="Soft skin, soft mornings."
               index={0}
             />
             <VideoCard
-              src="/dermanuecosmetics/assets/pinvideosaver_aad9tz0b.mp4"
+              src="/assets/pinvideosaver_aad9tz0b.mp4"
               category="HYDRATION EDIT"
               tagline="Drink it in."
               index={1}
             />
             <VideoCard
-              src="/dermanuecosmetics/assets/pinvideosaver_ugnihg81.mp4"
+              src="/assets/pinvideosaver_ugnihg81.mp4"
               category="GLOW SERIES"
               tagline="Quiet luxury, lit from within."
               index={2}
             />
             <VideoCard
-              src="/dermanuecosmetics/assets/pinvideosaver_d8435eu9.mp4"
+              src="/assets/pinvideosaver_d8435eu9.mp4"
               category="SCIENCE BACKED"
               tagline="Formulated with care."
               index={3}
             />
             <VideoCard
-              src="/dermanuecosmetics/assets/pinvideosaver_aa0eo74d.mp4"
+              src="/assets/pinvideosaver_aa0eo74d.mp4"
               category="CLEAN BEAUTY"
               tagline="Made with intention."
               index={4}
@@ -594,10 +594,10 @@ export default function Home() {
           <div className="lg:col-span-6">
             <div className="relative grid grid-cols-2 gap-4">
               {[
-                { t: "Authentic", s: "Verified sourcing", video: "/dermanuecosmetics/assets/Authentic.mp4" },
-                { t: "Clinical", s: "Science-backed formulas", video: "/dermanuecosmetics/assets/clinical.mp4" },
-                { t: "Educated", s: "Informed choices", video: "/dermanuecosmetics/assets/Educated.mp4" },
-                { t: "Curated", s: "Premium selection", video: "/dermanuecosmetics/assets/Curated.mp4" },
+                { t: "Authentic", s: "Verified sourcing", video: "/assets/Authentic.mp4" },
+                { t: "Clinical", s: "Science-backed formulas", video: "/assets/clinical.mp4" },
+                { t: "Educated", s: "Informed choices", video: "/assets/Educated.mp4" },
+                { t: "Curated", s: "Premium selection", video: "/assets/Curated.mp4" },
               ].map((c, i) => (
                 <motion.div
                   key={c.t}

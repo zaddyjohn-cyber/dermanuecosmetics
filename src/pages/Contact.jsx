@@ -318,7 +318,7 @@ export default function Contact() {
             {/* UGC ad accent — final visual reassurance */}
             <div className="mt-6">
               <VideoCard
-                src="/dermanuecosmetics/assets/pinvideosaver_u6n0cnhh.mp4"
+                src="/assets/pinvideosaver_u6n0cnhh.mp4"
                 category="JOIN DERMANUE"
                 tagline="Begin your beauty journey."
                 aspect="aspect-[4/5]"

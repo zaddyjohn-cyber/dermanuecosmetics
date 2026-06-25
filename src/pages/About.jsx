@@ -45,7 +45,7 @@ export default function About() {
                   className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-blush/60 blur-3xl"
                 />
                 <img
-                  src="/dermanuecosmetics/assets/dermanue.jpeg"
+                  src="/assets/dermanue.jpeg"
                   alt="DERMANUE brand story"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -64,7 +64,7 @@ export default function About() {
             {/* Floating UGC ad accent — overlaps the brand image */}
             <div className="hidden md:block absolute -right-6 -bottom-6 w-32 lg:w-40">
               <VideoCard
-                src="/dermanuecosmetics/assets/pinvideosaver_6d3jf5bm.mp4"
+                src="/assets/pinvideosaver_6d3jf5bm.mp4"
                 category="OUR STORY"
                 tagline="A house of care."
                 showAd={false}
@@ -341,7 +341,7 @@ export default function About() {
             </div>
             <div className="lg:col-span-5 relative">
               <VideoCard
-                src="/dermanuecosmetics/assets/pinvideosaver_nosu2hpw.mp4"
+                src="/assets/pinvideosaver_nosu2hpw.mp4"
                 category="FROM OUR TEAM"
                 tagline="Care, in motion."
                 showAd={false}

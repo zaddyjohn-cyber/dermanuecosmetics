@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zaddyjohn-cyber.github.io/dermanuecosmetics/sitemap.xml
+Sitemap: https://dermanuecosmetics.com/sitemap.xml

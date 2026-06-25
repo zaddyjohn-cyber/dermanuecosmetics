@@ -26,7 +26,7 @@ const products = [
     benefit: "Daily, weightless protection from trusted global skincare houses.",
     accent: "from-cream to-champagne/60",
     symbol: "☀",
-    image: "/dermanuecosmetics/assets/product-5.jpg",
+    image: "/assets/product-5.jpg",
   },
   {
     name: "Facial Cleansers",
@@ -34,7 +34,7 @@ const products = [
     benefit: "Gentle, refreshing cleansers carefully selected for daily routines.",
     accent: "from-rose-beige to-blush",
     symbol: "◇",
-    image: "/dermanuecosmetics/assets/product-6.jpg",
+    image: "/assets/product-6.jpg",
   },
   {
     name: "Beauty Essentials",
@@ -42,7 +42,7 @@ const products = [
     benefit: "A curated edit of clean, premium cosmetic essentials.",
     accent: "from-blush to-rose-beige",
     symbol: "◈",
-    image: "/dermanuecosmetics/assets/product-7.jpg",
+    image: "/assets/product-7.jpg",
   },
   {
     name: "Moisturizers",
@@ -50,7 +50,7 @@ const products = [
     benefit: "Lightweight, science-backed hydration from trusted partners.",
     accent: "from-rose-beige to-cream-2",
     symbol: "❋",
-    image: "/dermanuecosmetics/assets/product-9.jpg",
+    image: "/assets/product-9.jpg",
   },
   {
     name: "Serums & Treatments",
@@ -58,7 +58,7 @@ const products = [
     benefit: "Targeted formulas from established, science-led skincare brands.",
     accent: "from-cream to-blush",
     symbol: "✦",
-    image: "/dermanuecosmetics/assets/product-10.jpg",
+    image: "/assets/product-10.jpg",
   },
 ];
 
@@ -202,7 +202,7 @@ export default function Products() {
             {/* Featured UGC ad card slots into the product grid */}
             <div className="sm:col-span-2 lg:col-span-2 flex items-stretch">
               <VideoCard
-                src="/dermanuecosmetics/assets/pinvideosaver_uh6kug5d.mp4"
+                src="/assets/pinvideosaver_uh6kug5d.mp4"
                 category="FEATURED EDIT"
                 tagline="Skincare that earns its place."
                 aspect="aspect-auto"
@@ -234,7 +234,7 @@ export default function Products() {
             <div className="lg:col-span-4 flex justify-center">
               <div className="w-full max-w-[260px]">
                 <VideoCard
-                  src="/dermanuecosmetics/assets/pinvideosaver_x5lanip9.mp4"
+                  src="/assets/pinvideosaver_x5lanip9.mp4"
                   category="OUR PROCESS"
                   tagline="Selected with care."
                 />
