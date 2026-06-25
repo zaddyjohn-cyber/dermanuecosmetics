@@ -329,7 +329,7 @@ export default function Contact() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 sm:py-28 bg-cream-2/60 relative">
+      <section className="py-14 sm:py-18 bg-cream-2/60 relative">
         <div className="max-w-4xl mx-auto px-6">
           <SectionHeader
             eyebrow="FREQUENTLY ASKED"
@@ -388,7 +388,7 @@ export default function Contact() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-20 sm:py-24">
+      <section className="py-12 sm:py-16">
         <div className="max-w-5xl mx-auto px-6">
           <div className="relative rounded-[40px] overflow-hidden border border-champagne/40 gradient-cream p-10 sm:p-14 text-center">
             <div

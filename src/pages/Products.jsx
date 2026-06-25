@@ -217,7 +217,7 @@ export default function Products() {
       </section>
 
       {/* HOW WE SELECT BRANDS */}
-      <section className="py-24 sm:py-32 bg-rose-beige/45 relative overflow-hidden">
+      <section className="py-14 sm:py-20 bg-rose-beige/45 relative overflow-hidden">
         <div
           aria-hidden
           className="absolute -top-20 -right-20 w-[460px] h-[460px] rounded-full bg-champagne/35 blur-3xl"
@@ -265,7 +265,7 @@ export default function Products() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 sm:py-24">
+      <section className="py-12 sm:py-16">
         <div className="max-w-5xl mx-auto px-6">
           <div className="relative rounded-[40px] overflow-hidden border border-champagne/40 bg-softwhite/80 p-10 sm:p-14 text-center">
             <div

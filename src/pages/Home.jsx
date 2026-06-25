@@ -270,7 +270,7 @@ export default function Home() {
       <BrandPartners />
 
       {/* CATEGORIES */}
-      <section className="py-24 sm:py-32 relative">
+      <section className="py-14 sm:py-20 relative">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeader
             eyebrow="CURATED CATEGORIES"
@@ -322,7 +322,7 @@ export default function Home() {
       </section>
 
       {/* ABOUT PREVIEW */}
-      <section className="py-24 sm:py-32 bg-rose-beige/40 relative overflow-hidden">
+      <section className="py-14 sm:py-20 bg-rose-beige/40 relative overflow-hidden">
         <div
           aria-hidden
           className="absolute -top-32 right-0 w-[420px] h-[420px] rounded-full bg-champagne/40 blur-3xl"
@@ -390,7 +390,7 @@ export default function Home() {
       </section>
 
       {/* SCIENCE-BACKED */}
-      <section className="py-24 sm:py-32 relative">
+      <section className="py-14 sm:py-20 relative">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeader
             eyebrow="SCIENCE-BACKED BEAUTY"
@@ -421,7 +421,7 @@ export default function Home() {
           </div>
 
           {/* OUR COMMITMENT, AMPLIFIED — sub-section extending the science-backed standards */}
-          <div className="mt-20 sm:mt-24">
+          <div className="mt-12 sm:mt-16">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -502,7 +502,7 @@ export default function Home() {
       </section>
 
       {/* DERMANUE MOMENTS — UGC video strip, each branded as DERMANUE ad */}
-      <section className="py-24 sm:py-32 bg-cream-2/60 relative overflow-hidden">
+      <section className="py-14 sm:py-20 bg-cream-2/60 relative overflow-hidden">
         <div
           aria-hidden
           className="absolute -top-32 -right-20 w-[460px] h-[460px] rounded-full bg-blush/40 blur-3xl"
@@ -549,7 +549,7 @@ export default function Home() {
       </section>
 
       {/* CUSTOMER EDUCATION */}
-      <section className="py-24 sm:py-32 relative overflow-hidden">
+      <section className="py-14 sm:py-20 relative overflow-hidden">
         <div
           aria-hidden
           className="absolute -bottom-32 -left-32 w-[460px] h-[460px] rounded-full bg-blush/50 blur-3xl"
@@ -634,7 +634,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 sm:py-28">
+      <section className="py-14 sm:py-18">
         <div className="max-w-6xl mx-auto px-6">
           <div className="relative rounded-[40px] overflow-hidden border border-champagne/40">
             <div className="absolute inset-0 gradient-bronze" />

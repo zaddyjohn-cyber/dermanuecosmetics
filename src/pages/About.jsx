@@ -28,7 +28,7 @@ export default function About() {
       />
 
       {/* BRAND STORY */}
-      <section className="py-20 sm:py-28 relative overflow-hidden">
+      <section className="py-12 sm:py-16 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
           <motion.div
             variants={fade}
@@ -120,7 +120,7 @@ export default function About() {
       </section>
 
       {/* MISSION & VISION */}
-      <section className="py-20 sm:py-28 bg-rose-beige/40 relative">
+      <section className="py-12 sm:py-16 bg-rose-beige/40 relative">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-6">
           {[
             {
@@ -162,7 +162,7 @@ export default function About() {
       </section>
 
       {/* VALUES */}
-      <section className="py-24 sm:py-32 relative">
+      <section className="py-14 sm:py-20 relative">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeader
             eyebrow="OUR VALUES"
@@ -195,7 +195,7 @@ export default function About() {
       </section>
 
       {/* WHY AUTHENTICITY MATTERS */}
-      <section className="py-24 sm:py-32 bg-cream-2/60 relative overflow-hidden">
+      <section className="py-14 sm:py-20 bg-cream-2/60 relative overflow-hidden">
         <div
           aria-hidden
           className="absolute -top-20 -left-20 w-[420px] h-[420px] rounded-full bg-blush/45 blur-3xl"
@@ -296,7 +296,7 @@ export default function About() {
       </section>
 
       {/* FOUNDER MESSAGE */}
-      <section className="py-24 sm:py-32 relative">
+      <section className="py-14 sm:py-20 relative">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             variants={fade}
