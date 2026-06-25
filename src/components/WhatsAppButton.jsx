@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
-// TODO: replace with the real DERMANUE WhatsApp number (E.164 format, no +, no spaces)
-const PHONE = "2340000000000";
+// DERMANUE WhatsApp number (E.164 format, no +, no spaces)
+const PHONE = "447366557263";
 const MESSAGE =
   "Hi DERMANUE, I'd like to inquire about your products and brand partnerships.";
 

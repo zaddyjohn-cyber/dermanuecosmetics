@@ -86,10 +86,26 @@ export default function Footer() {
 
           <div className="md:col-span-3">
             <div className="text-[11px] tracking-luxe text-bronze mb-5">CONTACT</div>
-            <ul className="space-y-3 text-sm text-cocoa/85">
+            <ul className="space-y-4 text-sm text-cocoa/85">
               <li>hello@dermanue.com</li>
-              <li>+234 000 000 0000</li>
-              <li>Lagos, Nigeria</li>
+              <li>
+                <a
+                  href="https://wa.me/447366557263"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-bronze transition-colors"
+                >
+                  +44 7366 557263
+                </a>
+              </li>
+              <li>
+                <div className="text-[10px] tracking-luxe text-bronze mb-1">LONDON, UK</div>
+                <div>66 Woodfield Gardens<br/>New Malden, London</div>
+              </li>
+              <li>
+                <div className="text-[10px] tracking-luxe text-bronze mb-1">OWERRI, NIGERIA</div>
+                <div>145 Wethral Road<br/>Owerri, Imo State</div>
+              </li>
             </ul>
             <div className="mt-6 flex items-center gap-3">
               {["IG", "FB", "TT", "X"].map((s) => (

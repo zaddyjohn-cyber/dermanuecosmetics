@@ -15,10 +15,10 @@ const interests = [
 ];
 
 const infoCards = [
-  { label: "PHONE", value: "+234 000 000 0000", icon: "✆" },
+  { label: "WHATSAPP", value: "+44 7366 557263", icon: "✆" },
   { label: "EMAIL", value: "hello@dermanue.com", icon: "✉" },
-  { label: "LOCATION", value: "Lagos, Nigeria", icon: "◈" },
-  { label: "SOCIAL", value: "@dermanuecosmetics", icon: "❖" },
+  { label: "LONDON, UK", value: "66 Woodfield Gardens\nNew Malden, London", icon: "◈" },
+  { label: "OWERRI, NIGERIA", value: "145 Wethral Road\nOwerri, Imo State", icon: "◆" },
 ];
 
 const faqs = [
@@ -273,7 +273,7 @@ export default function Contact() {
                   <div className="mt-4 text-[10px] tracking-luxe text-bronze">
                     {c.label}
                   </div>
-                  <div className="mt-1 font-display text-lg text-espresso leading-tight">
+                  <div className="mt-1 font-display text-lg text-espresso leading-tight whitespace-pre-line">
                     {c.value}
                   </div>
                 </div>
