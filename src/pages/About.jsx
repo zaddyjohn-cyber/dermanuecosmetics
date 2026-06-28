@@ -106,10 +106,10 @@ export default function About() {
               ].map((s) => (
                 <div
                   key={s.l}
-                  className="rounded-2xl border border-champagne/40 bg-softwhite/70 p-4 text-center"
+                  className="rounded-2xl border border-champagne/40 bg-softwhite/70 p-4 text-center flex flex-col items-center justify-center min-h-[90px]"
                 >
-                  <div className="font-display text-2xl text-espresso">{s.v}</div>
-                  <div className="text-[9px] tracking-luxe text-bronze mt-1">
+                  <div className="font-display text-2xl text-espresso leading-tight">{s.v}</div>
+                  <div className="text-[9px] tracking-[0.15em] text-bronze mt-1 leading-tight">
                     {s.l}
                   </div>
                 </div>
